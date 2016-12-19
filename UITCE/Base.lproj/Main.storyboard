@@ -56,6 +56,9 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="xLG-04-0Oz" kind="show" id="Ugd-jo-T0M"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -86,6 +89,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="484" y="96"/>
+        </scene>
+        <!--Import Photo View Controller-->
+        <scene sceneID="qu6-0i-SMp">
+            <objects>
+                <viewController id="xLG-04-0Oz" customClass="ImportPhotoViewController" customModule="UITCE" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XAh-pN-gcc"/>
+                        <viewControllerLayoutGuide type="bottom" id="ndi-1w-2ZT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JK5-qb-Ujm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4lw-fm-iSi">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TZa-0C-dSm">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zrv-AV-MCm">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="xLG-04-0Oz" id="sgU-Uu-PQE"/>
+                                    <outlet property="delegate" destination="xLG-04-0Oz" id="6Ac-Qt-VeF"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4lw-fm-iSi" firstAttribute="leading" secondItem="JK5-qb-Ujm" secondAttribute="leading" id="GZo-72-ajw"/>
+                            <constraint firstAttribute="trailing" secondItem="4lw-fm-iSi" secondAttribute="trailing" id="Jjt-zE-MPY"/>
+                            <constraint firstItem="4lw-fm-iSi" firstAttribute="top" secondItem="XAh-pN-gcc" secondAttribute="bottom" id="aWk-b7-5eA"/>
+                            <constraint firstItem="ndi-1w-2ZT" firstAttribute="top" secondItem="4lw-fm-iSi" secondAttribute="bottom" id="fn5-6s-N8U"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="importPhotoCollectionView" destination="4lw-fm-iSi" id="bDL-uP-jVC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Bb-f1-LGx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1135" y="96"/>
         </scene>
     </scenes>
 </document>
