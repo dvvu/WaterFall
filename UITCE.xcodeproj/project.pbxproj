@@ -14,6 +14,10 @@
 		F8321AF21E077B3C00900A52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8321AF01E077B3C00900A52 /* LaunchScreen.storyboard */; };
 		F8321AFD1E077B3C00900A52 /* UITCETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8321AFC1E077B3C00900A52 /* UITCETests.swift */; };
 		F8321B081E077B3C00900A52 /* UITCEUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8321B071E077B3C00900A52 /* UITCEUITests.swift */; };
+		F8321B161E0781B800900A52 /* ImportPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8321B151E0781B800900A52 /* ImportPhotoViewController.swift */; };
+		F8321B1A1E07826800900A52 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8321B181E07826800900A52 /* ImageCollectionViewCell.swift */; };
+		F8321B1B1E07826800900A52 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8321B191E07826800900A52 /* ImageCollectionViewCell.xib */; };
+		F8321B1E1E07834A00900A52 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F8321B1D1E07834A00900A52 /* 1.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		F8321B031E077B3C00900A52 /* UITCEUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITCEUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8321B071E077B3C00900A52 /* UITCEUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITCEUITests.swift; sourceTree = "<group>"; };
 		F8321B091E077B3C00900A52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8321B151E0781B800900A52 /* ImportPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportPhotoViewController.swift; sourceTree = "<group>"; };
+		F8321B181E07826800900A52 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		F8321B191E07826800900A52 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		F8321B1D1E07834A00900A52 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +105,15 @@
 		F8321AE61E077B3C00900A52 /* UITCE */ = {
 			isa = PBXGroup;
 			children = (
+				F8321B1C1E07832F00900A52 /* imageTest */,
+				F8321B171E07823800900A52 /* CellHelper */,
 				F8321AE71E077B3C00900A52 /* AppDelegate.swift */,
 				F8321AE91E077B3C00900A52 /* ViewController.swift */,
 				F8321AEB1E077B3C00900A52 /* Main.storyboard */,
 				F8321AEE1E077B3C00900A52 /* Assets.xcassets */,
 				F8321AF01E077B3C00900A52 /* LaunchScreen.storyboard */,
 				F8321AF31E077B3C00900A52 /* Info.plist */,
+				F8321B151E0781B800900A52 /* ImportPhotoViewController.swift */,
 			);
 			path = UITCE;
 			sourceTree = "<group>";
@@ -123,6 +134,23 @@
 				F8321B091E077B3C00900A52 /* Info.plist */,
 			);
 			path = UITCEUITests;
+			sourceTree = "<group>";
+		};
+		F8321B171E07823800900A52 /* CellHelper */ = {
+			isa = PBXGroup;
+			children = (
+				F8321B181E07826800900A52 /* ImageCollectionViewCell.swift */,
+				F8321B191E07826800900A52 /* ImageCollectionViewCell.xib */,
+			);
+			name = CellHelper;
+			sourceTree = "<group>";
+		};
+		F8321B1C1E07832F00900A52 /* imageTest */ = {
+			isa = PBXGroup;
+			children = (
+				F8321B1D1E07834A00900A52 /* 1.jpg */,
+			);
+			name = imageTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,7 +265,9 @@
 			files = (
 				F8321AF21E077B3C00900A52 /* LaunchScreen.storyboard in Resources */,
 				F8321AEF1E077B3C00900A52 /* Assets.xcassets in Resources */,
+				F8321B1B1E07826800900A52 /* ImageCollectionViewCell.xib in Resources */,
 				F8321AED1E077B3C00900A52 /* Main.storyboard in Resources */,
+				F8321B1E1E07834A00900A52 /* 1.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +292,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8321B161E0781B800900A52 /* ImportPhotoViewController.swift in Sources */,
 				F8321AEA1E077B3C00900A52 /* ViewController.swift in Sources */,
+				F8321B1A1E07826800900A52 /* ImageCollectionViewCell.swift in Sources */,
 				F8321AE81E077B3C00900A52 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
