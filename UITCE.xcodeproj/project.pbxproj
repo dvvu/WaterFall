@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1794A56D8E4F9C579D13F8E5 /* Pods_UITCE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CDBB9815D0796CF8892EC31 /* Pods_UITCE.framework */; };
 		F8321AE81E077B3C00900A52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8321AE71E077B3C00900A52 /* AppDelegate.swift */; };
 		F8321AEA1E077B3C00900A52 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8321AE91E077B3C00900A52 /* ViewController.swift */; };
 		F8321AED1E077B3C00900A52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8321AEB1E077B3C00900A52 /* Main.storyboard */; };
@@ -14,10 +15,15 @@
 		F8321AF21E077B3C00900A52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8321AF01E077B3C00900A52 /* LaunchScreen.storyboard */; };
 		F8321AFD1E077B3C00900A52 /* UITCETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8321AFC1E077B3C00900A52 /* UITCETests.swift */; };
 		F8321B081E077B3C00900A52 /* UITCEUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8321B071E077B3C00900A52 /* UITCEUITests.swift */; };
-		F8321B161E0781B800900A52 /* ImportPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8321B151E0781B800900A52 /* ImportPhotoViewController.swift */; };
 		F8321B1A1E07826800900A52 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8321B181E07826800900A52 /* ImageCollectionViewCell.swift */; };
 		F8321B1B1E07826800900A52 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8321B191E07826800900A52 /* ImageCollectionViewCell.xib */; };
 		F8321B1E1E07834A00900A52 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F8321B1D1E07834A00900A52 /* 1.jpg */; };
+		F8321B3C1E07C91400900A52 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8321B3B1E07C91400900A52 /* SQLite.framework */; };
+		F8321B3E1E07C91A00900A52 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F8321B3D1E07C91A00900A52 /* libsqlite3.tbd */; };
+		F8321B401E07E04700900A52 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F8321B3F1E07E04700900A52 /* libsqlite3.0.tbd */; };
+		F8E486E91E08D90E00009C45 /* SwiftData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E486E81E08D90E00009C45 /* SwiftData.swift */; };
+		F8E486EB1E08E28300009C45 /* DataProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E486EA1E08E28300009C45 /* DataProviding.swift */; };
+		F8E486ED1E092C9500009C45 /* ImportPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E486EC1E092C9500009C45 /* ImportPhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1CDBB9815D0796CF8892EC31 /* Pods_UITCE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UITCE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		35D8EECF6FCD9C1FB246EEB6 /* Pods-UITCE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITCE.release.xcconfig"; path = "Pods/Target Support Files/Pods-UITCE/Pods-UITCE.release.xcconfig"; sourceTree = "<group>"; };
+		50B2E48914BD192CC2211112 /* Pods-UITCE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITCE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UITCE/Pods-UITCE.debug.xcconfig"; sourceTree = "<group>"; };
 		F8321AE41E077B3C00900A52 /* UITCE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UITCE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8321AE71E077B3C00900A52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8321AE91E077B3C00900A52 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,10 +60,16 @@
 		F8321B031E077B3C00900A52 /* UITCEUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITCEUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8321B071E077B3C00900A52 /* UITCEUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITCEUITests.swift; sourceTree = "<group>"; };
 		F8321B091E077B3C00900A52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F8321B151E0781B800900A52 /* ImportPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportPhotoViewController.swift; sourceTree = "<group>"; };
 		F8321B181E07826800900A52 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		F8321B191E07826800900A52 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		F8321B1D1E07834A00900A52 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		F8321B3B1E07C91400900A52 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = "../../Library/Developer/Xcode/DerivedData/UITCE-hkoyvqteorvjllfneegnjjselveq/Build/Products/Debug-iphonesimulator/SQLite.swift/SQLite.framework"; sourceTree = "<group>"; };
+		F8321B3D1E07C91A00900A52 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		F8321B3F1E07E04700900A52 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		F8321B431E07E19A00900A52 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		F8E486E81E08D90E00009C45 /* SwiftData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftData.swift; sourceTree = "<group>"; };
+		F8E486EA1E08E28300009C45 /* DataProviding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProviding.swift; sourceTree = "<group>"; };
+		F8E486EC1E092C9500009C45 /* ImportPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportPhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +77,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8321B401E07E04700900A52 /* libsqlite3.0.tbd in Frameworks */,
+				F8321B3E1E07C91A00900A52 /* libsqlite3.tbd in Frameworks */,
+				F8321B3C1E07C91400900A52 /* SQLite.framework in Frameworks */,
+				1794A56D8E4F9C579D13F8E5 /* Pods_UITCE.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,13 +101,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8ECFE9DF89DC75995AF2211B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				50B2E48914BD192CC2211112 /* Pods-UITCE.debug.xcconfig */,
+				35D8EECF6FCD9C1FB246EEB6 /* Pods-UITCE.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F8321ADB1E077B3B00900A52 = {
 			isa = PBXGroup;
 			children = (
+				F8321B431E07E19A00900A52 /* Header.h */,
 				F8321AE61E077B3C00900A52 /* UITCE */,
 				F8321AFB1E077B3C00900A52 /* UITCETests */,
 				F8321B061E077B3C00900A52 /* UITCEUITests */,
 				F8321AE51E077B3C00900A52 /* Products */,
+				F8321B3A1E07C91400900A52 /* Frameworks */,
+				8ECFE9DF89DC75995AF2211B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +136,7 @@
 		F8321AE61E077B3C00900A52 /* UITCE */ = {
 			isa = PBXGroup;
 			children = (
+				F8321B441E07E72800900A52 /* DataBase */,
 				F8321B1C1E07832F00900A52 /* imageTest */,
 				F8321B171E07823800900A52 /* CellHelper */,
 				F8321AE71E077B3C00900A52 /* AppDelegate.swift */,
@@ -113,7 +145,6 @@
 				F8321AEE1E077B3C00900A52 /* Assets.xcassets */,
 				F8321AF01E077B3C00900A52 /* LaunchScreen.storyboard */,
 				F8321AF31E077B3C00900A52 /* Info.plist */,
-				F8321B151E0781B800900A52 /* ImportPhotoViewController.swift */,
 			);
 			path = UITCE;
 			sourceTree = "<group>";
@@ -139,6 +170,7 @@
 		F8321B171E07823800900A52 /* CellHelper */ = {
 			isa = PBXGroup;
 			children = (
+				F8E486EC1E092C9500009C45 /* ImportPhotoViewController.swift */,
 				F8321B181E07826800900A52 /* ImageCollectionViewCell.swift */,
 				F8321B191E07826800900A52 /* ImageCollectionViewCell.xib */,
 			);
@@ -153,6 +185,26 @@
 			name = imageTest;
 			sourceTree = "<group>";
 		};
+		F8321B3A1E07C91400900A52 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8321B3F1E07E04700900A52 /* libsqlite3.0.tbd */,
+				F8321B3D1E07C91A00900A52 /* libsqlite3.tbd */,
+				F8321B3B1E07C91400900A52 /* SQLite.framework */,
+				1CDBB9815D0796CF8892EC31 /* Pods_UITCE.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8321B441E07E72800900A52 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				F8E486E81E08D90E00009C45 /* SwiftData.swift */,
+				F8E486EA1E08E28300009C45 /* DataProviding.swift */,
+			);
+			name = DataBase;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -160,9 +212,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8321B0C1E077B3C00900A52 /* Build configuration list for PBXNativeTarget "UITCE" */;
 			buildPhases = (
+				2E16E6A2744BB6C3F591337E /* [CP] Check Pods Manifest.lock */,
 				F8321AE01E077B3B00900A52 /* Sources */,
 				F8321AE11E077B3B00900A52 /* Frameworks */,
 				F8321AE21E077B3B00900A52 /* Resources */,
+				FCE1F06FFBBEA0ED8C44A305 /* [CP] Embed Pods Frameworks */,
+				D9A1ECCB90CB13901B1327F0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -287,14 +342,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2E16E6A2744BB6C3F591337E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D9A1ECCB90CB13901B1327F0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UITCE/Pods-UITCE-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCE1F06FFBBEA0ED8C44A305 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UITCE/Pods-UITCE-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F8321AE01E077B3B00900A52 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8321B161E0781B800900A52 /* ImportPhotoViewController.swift in Sources */,
+				F8E486ED1E092C9500009C45 /* ImportPhotoViewController.swift in Sources */,
+				F8E486EB1E08E28300009C45 /* DataProviding.swift in Sources */,
 				F8321AEA1E077B3C00900A52 /* ViewController.swift in Sources */,
 				F8321B1A1E07826800900A52 /* ImageCollectionViewCell.swift in Sources */,
+				F8E486E91E08D90E00009C45 /* SwiftData.swift in Sources */,
 				F8321AE81E077B3C00900A52 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,6 +550,7 @@
 		};
 		F8321B0D1E077B3C00900A52 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50B2E48914BD192CC2211112 /* Pods-UITCE.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2FXVJFZPXW;
@@ -453,12 +559,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uit.UITCE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = Header.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		F8321B0E1E077B3C00900A52 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35D8EECF6FCD9C1FB246EEB6 /* Pods-UITCE.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2FXVJFZPXW;
@@ -467,6 +575,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uit.UITCE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = Header.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -548,6 +657,7 @@
 				F8321B0E1E077B3C00900A52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F8321B0F1E077B3C00900A52 /* Build configuration list for PBXNativeTarget "UITCETests" */ = {
 			isa = XCConfigurationList;
@@ -556,6 +666,7 @@
 				F8321B111E077B3C00900A52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F8321B121E077B3C00900A52 /* Build configuration list for PBXNativeTarget "UITCEUITests" */ = {
 			isa = XCConfigurationList;
@@ -564,6 +675,7 @@
 				F8321B141E077B3C00900A52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
