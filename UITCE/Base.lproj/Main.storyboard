@@ -103,7 +103,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4lw-fm-iSi">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="99" width="375" height="568"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TZa-0C-dSm">
                                     <size key="itemSize" width="50" height="50"/>
@@ -126,13 +126,41 @@
                                     <outlet property="delegate" destination="xLG-04-0Oz" id="6Ac-Qt-VeF"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ad-7C-kRp">
+                                <rect key="frame" x="0.0" y="28" width="190" height="63"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="190" id="yjz-w4-2PF"/>
+                                </constraints>
+                                <state key="normal" title="insert"/>
+                                <connections>
+                                    <action selector="insertButton:" destination="xLG-04-0Oz" eventType="touchUpInside" id="gbR-zn-ArA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qUP-Uv-fgh">
+                                <rect key="frame" x="185" y="28" width="190" height="63"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="fIr-GO-04E"/>
+                                </constraints>
+                                <state key="normal" title="delete"/>
+                                <connections>
+                                    <action selector="deleteButton:" destination="xLG-04-0Oz" eventType="touchUpInside" id="oP1-ao-F2W"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="4lw-fm-iSi" firstAttribute="leading" secondItem="JK5-qb-Ujm" secondAttribute="leading" id="GZo-72-ajw"/>
-                            <constraint firstAttribute="trailing" secondItem="4lw-fm-iSi" secondAttribute="trailing" id="Jjt-zE-MPY"/>
-                            <constraint firstItem="4lw-fm-iSi" firstAttribute="top" secondItem="XAh-pN-gcc" secondAttribute="bottom" id="aWk-b7-5eA"/>
-                            <constraint firstItem="ndi-1w-2ZT" firstAttribute="top" secondItem="4lw-fm-iSi" secondAttribute="bottom" id="fn5-6s-N8U"/>
+                            <constraint firstAttribute="trailing" secondItem="qUP-Uv-fgh" secondAttribute="trailing" id="4T8-ef-fsw"/>
+                            <constraint firstItem="qUP-Uv-fgh" firstAttribute="top" secondItem="XAh-pN-gcc" secondAttribute="bottom" constant="8" id="9G9-ol-V8r"/>
+                            <constraint firstItem="ndi-1w-2ZT" firstAttribute="top" secondItem="4lw-fm-iSi" secondAttribute="bottom" id="M3T-I6-pdj"/>
+                            <constraint firstItem="4lw-fm-iSi" firstAttribute="leading" secondItem="JK5-qb-Ujm" secondAttribute="leading" id="QgD-uQ-HGQ"/>
+                            <constraint firstItem="2Ad-7C-kRp" firstAttribute="top" secondItem="XAh-pN-gcc" secondAttribute="bottom" constant="8" id="bAv-2y-d6b"/>
+                            <constraint firstAttribute="trailing" secondItem="4lw-fm-iSi" secondAttribute="trailing" id="n6l-Xy-S5d"/>
+                            <constraint firstItem="4lw-fm-iSi" firstAttribute="top" secondItem="qUP-Uv-fgh" secondAttribute="bottom" constant="8" id="sbU-sj-EVt"/>
+                            <constraint firstItem="qUP-Uv-fgh" firstAttribute="width" secondItem="2Ad-7C-kRp" secondAttribute="width" id="w2t-W8-YxE"/>
+                            <constraint firstItem="qUP-Uv-fgh" firstAttribute="height" secondItem="2Ad-7C-kRp" secondAttribute="height" id="yRC-4z-VuM"/>
+                            <constraint firstItem="2Ad-7C-kRp" firstAttribute="leading" secondItem="JK5-qb-Ujm" secondAttribute="leading" id="zua-rk-VeK"/>
                         </constraints>
                     </view>
                     <connections>
@@ -141,7 +169,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Bb-f1-LGx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1135" y="96"/>
+            <point key="canvasLocation" x="1133.5999999999999" y="95.802098950524751"/>
         </scene>
     </scenes>
 </document>
