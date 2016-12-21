@@ -24,6 +24,10 @@
 		F8E486E91E08D90E00009C45 /* SwiftData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E486E81E08D90E00009C45 /* SwiftData.swift */; };
 		F8E486EB1E08E28300009C45 /* DataProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E486EA1E08E28300009C45 /* DataProviding.swift */; };
 		F8E486ED1E092C9500009C45 /* ImportPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E486EC1E092C9500009C45 /* ImportPhotoViewController.swift */; };
+		F8FD67541E0A225200D49F01 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FD67531E0A225200D49F01 /* SettingViewController.swift */; };
+		F8FD67561E0A227200D49F01 /* DisplayTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FD67551E0A227200D49F01 /* DisplayTextViewController.swift */; };
+		F8FD67581E0A228800D49F01 /* DrawImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FD67571E0A228800D49F01 /* DrawImageViewController.swift */; };
+		F8FD675A1E0A229500D49F01 /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FD67591E0A229500D49F01 /* ClockViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +74,10 @@
 		F8E486E81E08D90E00009C45 /* SwiftData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftData.swift; sourceTree = "<group>"; };
 		F8E486EA1E08E28300009C45 /* DataProviding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProviding.swift; sourceTree = "<group>"; };
 		F8E486EC1E092C9500009C45 /* ImportPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportPhotoViewController.swift; sourceTree = "<group>"; };
+		F8FD67531E0A225200D49F01 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		F8FD67551E0A227200D49F01 /* DisplayTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayTextViewController.swift; sourceTree = "<group>"; };
+		F8FD67571E0A228800D49F01 /* DrawImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawImageViewController.swift; sourceTree = "<group>"; };
+		F8FD67591E0A229500D49F01 /* ClockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +144,7 @@
 		F8321AE61E077B3C00900A52 /* UITCE */ = {
 			isa = PBXGroup;
 			children = (
+				F8FD67521E0A221100D49F01 /* Func */,
 				F8321B441E07E72800900A52 /* DataBase */,
 				F8321B1C1E07832F00900A52 /* imageTest */,
 				F8321B171E07823800900A52 /* CellHelper */,
@@ -170,7 +179,6 @@
 		F8321B171E07823800900A52 /* CellHelper */ = {
 			isa = PBXGroup;
 			children = (
-				F8E486EC1E092C9500009C45 /* ImportPhotoViewController.swift */,
 				F8321B181E07826800900A52 /* ImageCollectionViewCell.swift */,
 				F8321B191E07826800900A52 /* ImageCollectionViewCell.xib */,
 			);
@@ -203,6 +211,18 @@
 				F8E486EA1E08E28300009C45 /* DataProviding.swift */,
 			);
 			name = DataBase;
+			sourceTree = "<group>";
+		};
+		F8FD67521E0A221100D49F01 /* Func */ = {
+			isa = PBXGroup;
+			children = (
+				F8E486EC1E092C9500009C45 /* ImportPhotoViewController.swift */,
+				F8FD67531E0A225200D49F01 /* SettingViewController.swift */,
+				F8FD67551E0A227200D49F01 /* DisplayTextViewController.swift */,
+				F8FD67571E0A228800D49F01 /* DrawImageViewController.swift */,
+				F8FD67591E0A229500D49F01 /* ClockViewController.swift */,
+			);
+			name = Func;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,8 +418,12 @@
 				F8E486ED1E092C9500009C45 /* ImportPhotoViewController.swift in Sources */,
 				F8E486EB1E08E28300009C45 /* DataProviding.swift in Sources */,
 				F8321AEA1E077B3C00900A52 /* ViewController.swift in Sources */,
+				F8FD675A1E0A229500D49F01 /* ClockViewController.swift in Sources */,
 				F8321B1A1E07826800900A52 /* ImageCollectionViewCell.swift in Sources */,
+				F8FD67561E0A227200D49F01 /* DisplayTextViewController.swift in Sources */,
 				F8E486E91E08D90E00009C45 /* SwiftData.swift in Sources */,
+				F8FD67541E0A225200D49F01 /* SettingViewController.swift in Sources */,
+				F8FD67581E0A228800D49F01 /* DrawImageViewController.swift in Sources */,
 				F8321AE81E077B3C00900A52 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
