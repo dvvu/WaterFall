@@ -15,7 +15,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 //        SD.deleteTable(table: "ImageData")
         createTable()
-        InssertData()
     }
     
 //    func conditionSQLite() {
@@ -48,8 +47,8 @@ class ViewController: UIViewController {
         if let _ = SD.createTable(table: "Setting", withColumnNamesAndTypes: ["Van": .IntVal, "DRow": .IntVal, "DImage": .IntVal, "Value": .IntVal, "IP": .StringVal, "Port": .IntVal]) {
             print("Error: Do it again!")
         } else {
-            if let _ = SD.executeChange(sqlStr: "INSERT INTO Setting (Van, DRow, DImage, Value, IP, Port) VALUES (?, ?, ?, ?, ?, ?)", withArgs: [168 as AnyObject,500 as AnyObject,1000 as AnyObject,127 as AnyObject,"192.168.1.1" as AnyObject,90 as AnyObject]) {
-            }
+//            if let _ = SD.executeChange(sqlStr: "INSERT INTO Setting (Van, DRow, DImage, Value, IP, Port) VALUES (?, ?, ?, ?, ?, ?)", withArgs: [168 as AnyObject,500 as AnyObject,1000 as AnyObject,127 as AnyObject,"192.168.1.1" as AnyObject,90 as AnyObject]) {
+//            }
         }
         
         if let _ = SD.createTable(table: "ListImageData", withColumnNamesAndTypes: ["Path": .StringVal]) {
@@ -77,9 +76,9 @@ class ViewController: UIViewController {
         }
     }
 
-    func InssertData() {
-         SD.executeQuery(sqlStr: "UPDATE Setting SET Van = '\("192")',DRow = '\("200")', DImage = '\("300")', Value = '\("120")', IP = '\("192.168.0.0")', Port = '\("9922")'")
-    }
+//    func InssertData() {
+//         SD.executeQuery(sqlStr: "UPDATE Setting SET Van = '\("192")',DRow = '\("200")', DImage = '\("300")', Value = '\("120")', IP = '\("192.168.0.0")', Port = '\("9922")'")
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

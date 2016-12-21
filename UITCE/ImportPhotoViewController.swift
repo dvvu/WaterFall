@@ -11,7 +11,6 @@ import UIKit
 class ImportPhotoViewController: UIViewController {
 
     var imagesDirectoryPath:String!
-    
     var imagePicker = UIImagePickerController()
     var images: [UIImage]?
     var number: Int = 0
@@ -21,11 +20,20 @@ class ImportPhotoViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        layoutCollectiobView()
+        
         importPhotoCollectionView!.register(UINib(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ImageCollectionViewCell")
         
-        self.conditionSQLite()
-        self.RepareData()
+        DispatchQueue.global(qos: .background).async {
+            self.conditionSQLite()
+            self.RepareData()
+            
+            DispatchQueue.main.async {
+                self.imagePicker.allowsEditing = false
+                self.imagePicker.delegate = self
+                self.imagePicker.sourceType = .photoLibrary
+                self.layoutCollectiobView()
+            }
+        }
     }
 
     func layoutCollectiobView() {
@@ -38,12 +46,12 @@ class ImportPhotoViewController: UIViewController {
     }
 
     @IBAction func insertButton(_ sender: Any) {
-        imagePicker.allowsEditing = false
-        imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true, completion: nil)
     }
     
+    @IBAction func back(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 
     @IBAction func deleteButton(_ sender: Any) {
         if isDelete == true {
@@ -100,6 +108,27 @@ class ImportPhotoViewController: UIViewController {
         }
     }
     
+    func deleteImage(index: Int) {
+        //Delete image
+        let (resultSet, err) = SD.executeQuery(sqlStr: "SELECT * FROM ImageData")
+        if err != nil {
+        } else {
+            if let name = resultSet[index]["Path"]!.asString() {
+                SD.executeQuery(sqlStr: "DELETE FROM ImageData WHERE Path='\(name)'")
+                do {
+                    print(name)
+                    try FileManager.default.removeItem(atPath: imagesDirectoryPath + name)
+                    print("old image has been removed")
+                } catch {
+                    print("an error during a removing")
+                }
+                
+            }
+        }
+        self.RepareData()
+        self.importPhotoCollectionView.reloadData()
+    }
+    
     
 }
 
@@ -121,7 +150,34 @@ extension ImportPhotoViewController: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
+        if isDelete == true {
+            let refreshAlert = UIAlertController(title: "Delete", message: "Do you want to delete this immage?", preferredStyle: UIAlertControllerStyle.alert)
+            
+            refreshAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
+                self.deleteImage(index: indexPath.row)
+                self.isDelete = false
+                self.importPhotoCollectionView.backgroundColor = UIColor.white
+                
+            }))
+            
+            refreshAlert.addAction(UIAlertAction(title: "No", style: .default, handler: { (action: UIAlertAction!) in
+            }))
+            
+            present(refreshAlert, animated: true, completion: nil)
+        } else {
+//            let (resultSet, err) = SD.executeQuery(sqlStr: "SELECT * FROM ImageData")
+//            if err != nil {
+//            } else {
+//                if let image = resultSet[indexPath.row]["Path"]?.asString() {
+//                    print(image)
+//                    if let vc = UIStoryboard.detailViewController() {
+//                        vc.imageURL = image
+//                        self.presentViewController(vc, animated: true, completion: nil)
+//                    }
+//                }
+//            }
+        }
+        
     }
 }
 
