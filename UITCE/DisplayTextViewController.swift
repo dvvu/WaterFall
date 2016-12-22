@@ -12,11 +12,69 @@ class DisplayTextViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var enterText: UITextField!
     @IBOutlet weak var labelImage: UILabel!
+    @IBOutlet weak var size: UILabel!
+    @IBOutlet weak var font: UILabel!
+    @IBOutlet weak var pickerView: UIPickerView!
    
+    var imagesDirectoryPath:String!
+    var pickerDataSize:[Int] = []
+    var pickerDataFont:[String] = ["Arial",
+                                   "Arial-BoldMT",
+                                   "Arial-ItalicMT",
+                                   "Arial-BoldItalicMT",
+                                   ]
+    /*
+     "Arial",
+     "HelveticaNeue-Bold",
+     "HelveticaNeue-Thin",
+     "AvenirNext-HeavyItalic",
+     Arial-BoldItalicMT
+     */
+    var isSelected: Bool?
+    var fontSize: CGFloat = 14
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        conditionSQLite()
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        tapSettingLabel()
+        
+        for i in 14...100 {
+            pickerDataSize.append(i)
+        }
+    }
+    
+    func tapSettingLabel() {
         let fontGesture = UITapGestureRecognizer(target: self, action: #selector(DisplayTextViewController.viewTapped(sender:)))
         self.view.addGestureRecognizer(fontGesture)
+        
+        size.isUserInteractionEnabled = true
+        let tapSize: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapOnSize))
+        size.addGestureRecognizer(tapSize)
+        
+        font.isUserInteractionEnabled = true
+        let tapFont: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapOnFont))
+        font.addGestureRecognizer(tapFont)
+    }
+    
+    
+    func tapOnSize() {
+        if let tf = enterText {
+            tf.resignFirstResponder()
+        }
+        isSelected = true
+        pickerView.reloadAllComponents()
+        pickerView.isHidden = false
+    }
+    
+    func tapOnFont() {
+        if let tf = enterText {
+            tf.resignFirstResponder()
+        }
+        isSelected = false
+        pickerView.reloadAllComponents()
+        pickerView.isHidden = false
     }
     
     @IBAction func back(_ sender: Any) {
@@ -24,7 +82,38 @@ class DisplayTextViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func save(_ sender: Any) {
+        let refreshAlert = UIAlertController(title: "Comfirm", message: "Would you like to save image?", preferredStyle: UIAlertControllerStyle.alert)
         
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            
+            let image = UIImage.imageWithLabel(label: self.labelImage)
+            var imagePath = NSDate().description
+            imagePath = imagePath.replacingOccurrences(of: " ", with: "")
+            imagePath = self.imagesDirectoryPath.appending("/\(imagePath).png")
+            let data = UIImagePNGRepresentation(image)
+            let success = FileManager.default.createFile(atPath: imagePath, contents: data, attributes: nil)
+            self.insertData()
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+            print("Handle Cancel Logic here")
+            do{
+                let titles = try FileManager.default.contentsOfDirectory(atPath: self.imagesDirectoryPath)
+                    /*Remove in directory when user don't save*/
+                    do {
+                        try FileManager.default.removeItem(atPath: self.imagesDirectoryPath + "/" + "/\(titles[titles.count-1])")
+                        print("old image has been removed")
+                    } catch {
+                        print("an error during a removing")
+                    }
+                
+            }catch{
+                print("Error")
+            }
+
+        }))
+        
+        present(refreshAlert, animated: true, completion: nil)
     }
     
     @IBAction func send(_ sender: Any) {
@@ -58,6 +147,7 @@ class DisplayTextViewController: UIViewController, UITextFieldDelegate {
         if let tf = enterText {
             tf.resignFirstResponder()
         }
+        pickerView.isHidden = true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -70,5 +160,81 @@ class DisplayTextViewController: UIViewController, UITextFieldDelegate {
         return true;
     }
     
+    func insertData() {
+        do{
+            let titles = try FileManager.default.contentsOfDirectory(atPath: imagesDirectoryPath)
+            if let err = SD.executeChange(sqlStr: "INSERT INTO ImageData (Path) VALUES (?)", withArgs: ["/\(titles[titles.count-1])" as AnyObject]){
+                //there was an error inserting the new row, handle it here
+            }
+        }catch{
+            print("Error")
+        }
+    }
+    
+    func conditionSQLite() {
+        /*Condition to have path*/
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        // Get the Document directory path
+        let documentDirectorPath:String = paths[0]
+        // Create a new path for the new images folder
+        imagesDirectoryPath = documentDirectorPath.appending("/ImagePicker")
+        //documentDirectorPath.stringByAppendingString("/ImagePicker")
+        
+        var objcBool:ObjCBool = true
+        let isExist = FileManager.default.fileExists(atPath: imagesDirectoryPath, isDirectory: &objcBool)
+        // If the folder with the given path doesn't exist already, create it
+        if isExist == false{
+            do{
+                try FileManager.default.createDirectory(atPath: imagesDirectoryPath, withIntermediateDirectories: true, attributes: nil)
+            }catch{
+                print("Something went wrong while creating a new folder")
+            }
+        }
+    }
 }
+
+extension DisplayTextViewController : UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if isSelected == true {
+            return pickerDataSize.count
+        } else {
+            return pickerDataFont.count
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if isSelected == true {
+            return pickerDataSize[row].description
+        } else {
+            return pickerDataFont[row]
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        if isSelected == true {
+             size.text = pickerDataSize[row].description + "⎊"
+             labelImage.font = labelImage.font.withSize(CGFloat(pickerDataSize[row]))
+             fontSize = CGFloat(pickerDataSize[row])
+        } else {
+             font.text = pickerDataFont[row] + "⎊"
+             labelImage.font = UIFont.init(name: pickerDataFont[row], size: fontSize)
+        }
+
+        pickerView.isHidden = true
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 35
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+        return self.view.frame.width-20
+    }
+}
+
 

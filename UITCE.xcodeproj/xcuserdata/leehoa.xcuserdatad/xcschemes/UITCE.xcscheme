@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F8321AE31E077B3B00900A52"
-               BuildableName = "UITCE.app"
+               BuildableName = "WatterFall.app"
                BlueprintName = "UITCE"
                ReferencedContainer = "container:UITCE.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F8321AE31E077B3B00900A52"
-            BuildableName = "UITCE.app"
+            BuildableName = "WatterFall.app"
             BlueprintName = "UITCE"
             ReferencedContainer = "container:UITCE.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F8321AE31E077B3B00900A52"
-            BuildableName = "UITCE.app"
+            BuildableName = "WatterFall.app"
             BlueprintName = "UITCE"
             ReferencedContainer = "container:UITCE.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F8321AE31E077B3B00900A52"
-            BuildableName = "UITCE.app"
+            BuildableName = "WatterFall.app"
             BlueprintName = "UITCE"
             ReferencedContainer = "container:UITCE.xcodeproj">
          </BuildableReference>

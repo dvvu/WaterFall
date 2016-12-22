@@ -7,12 +7,12 @@
 //
 
 import UIKit
+var socketTCP : TCPClient?
 
 class SettingViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var heightScrollView: NSLayoutConstraint!
-    
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var vans: UILabel!
     @IBOutlet weak var dImage: UITextField!
@@ -24,6 +24,9 @@ class SettingViewController: UIViewController {
     
     var pickerData = ["192","164","128", "96", "64", "32"]
     var textField: UITextField?
+    
+    var addrConnect: String = "192.168.0.125"
+    var portConnect: Int = 4000
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,6 +90,17 @@ class SettingViewController: UIViewController {
     }
    
     @IBAction func connnect(_ sender: Any) {
+        let (resultSet, err) = SD.executeQuery(sqlStr: "SELECT * FROM Setting")
+        if err != nil {
+            print(" Error in loading Data")
+        } else {
+            addrConnect =  (resultSet[0]["IP"]?.asString()!)!
+            portConnect = (resultSet[0]["Port"]?.asInt()!)!
+        }
+        socketTCP = TCPClient(addr: addrConnect, port: portConnect)
+        // Connect the socket
+        let (success, msg ) = socketTCP!.connect(timeout: 1)
+
     }
     
     @IBAction func `default`(_ sender: Any) {
