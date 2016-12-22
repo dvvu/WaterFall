@@ -38,7 +38,6 @@ class SettingViewController: UIViewController {
         vans.isUserInteractionEnabled = true
         let tapOnImage: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewPicker))
         vans.addGestureRecognizer(tapOnImage)
-        
     }
     
     func viewPicker() {
