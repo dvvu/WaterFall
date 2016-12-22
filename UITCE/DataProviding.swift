@@ -21,8 +21,6 @@ class DataProviding {
         UIGraphicsEndImageContext()
         return newImage!
     }
-    
-    
 }
 
 extension CGRect{
@@ -39,5 +37,23 @@ extension CGSize{
 extension CGPoint{
     init(_ x:CGFloat,_ y:CGFloat) {
         self.init(x:x,y:y)
+    }
+}
+
+extension UIImage {
+    class func imageWithLabel(label: UILabel) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(label.bounds.size, false, 0.0)
+        label.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let img = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return img!
+    }
+    
+    func imageWithView(view: UIView) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.isOpaque, 0.0)
+        view.drawHierarchy(in: view.bounds, afterScreenUpdates: false)
+        let snapshotImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return snapshotImage!
     }
 }
