@@ -33,6 +33,10 @@ class DisplayTextViewController: UIViewController, UITextFieldDelegate {
     var isSelected: Bool?
     var fontSize: CGFloat = 14
     
+    var pixels = [DataProviding.PixelData()]
+    let black = DataProviding.PixelData(a: 255, r: 0, g: 0, b: 0)
+    let white = DataProviding.PixelData(a: 255, r: 255, g: 255, b: 255)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         conditionSQLite()
@@ -117,7 +121,17 @@ class DisplayTextViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func send(_ sender: Any) {
+        let image = UIImage.imageWithLabel(label: self.labelImage)
+        let image2 = DataProviding.resizeImage(image: image, newWidth: 192)
+        let result = DataProviding.intensityValuesFromImage2(image: image2, value: 127)
         
+        let newString = (result.pixelValues?.description)!
+        let newString2 = newString.replacingOccurrences(of: ", ", with: "", options: .literal, range: nil)
+        let newString3 = newString2.replacingOccurrences(of: "[", with: "", options: .literal, range: nil)
+        let data = newString3.replacingOccurrences(of: "]", with: "", options: .literal, range: nil)
+
+        
+        socketTCP?.send(str: data + "\n")
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
