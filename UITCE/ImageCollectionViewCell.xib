@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCollectionViewCell" id="gTV-IL-0wX" customClass="ImageCollectionViewCell" customModule="UITCE" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCollectionViewCell" id="gTV-IL-0wX" customClass="ImageCollectionViewCell" customModule="WatterFall" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="344" height="232"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -19,15 +19,16 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="iMR-zx-flk">
-                        <rect key="frame" x="0.0" y="0.0" width="344" height="232"/>
+                        <rect key="frame" x="1" y="1" width="342" height="230"/>
                     </imageView>
                 </subviews>
             </view>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="iMR-zx-flk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Fcm-5H-INt"/>
-                <constraint firstAttribute="bottom" secondItem="iMR-zx-flk" secondAttribute="bottom" id="TYi-if-gg9"/>
-                <constraint firstItem="iMR-zx-flk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="oFy-nB-iiU"/>
-                <constraint firstAttribute="trailing" secondItem="iMR-zx-flk" secondAttribute="trailing" id="wjx-QS-HhM"/>
+                <constraint firstItem="iMR-zx-flk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1" id="Io9-1G-Qxr"/>
+                <constraint firstItem="iMR-zx-flk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="1" id="ff9-el-PBP"/>
+                <constraint firstAttribute="bottom" secondItem="iMR-zx-flk" secondAttribute="bottom" constant="1" id="owl-5q-MeQ"/>
+                <constraint firstAttribute="trailing" secondItem="iMR-zx-flk" secondAttribute="trailing" constant="1" id="tlc-RQ-plt"/>
             </constraints>
             <size key="customSize" width="344" height="232"/>
             <connections>

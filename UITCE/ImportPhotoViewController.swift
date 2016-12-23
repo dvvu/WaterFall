@@ -16,6 +16,10 @@ class ImportPhotoViewController: UIViewController {
     var number: Int = 0
     var isDelete: Bool = false
     
+    var pixels = [DataProviding.PixelData()]
+    let black = DataProviding.PixelData(a: 255, r: 0, g: 0, b: 0)
+    let white = DataProviding.PixelData(a: 255, r: 255, g: 255, b: 255)
+    
     @IBOutlet weak var importPhotoCollectionView: UICollectionView!
     override func viewDidLoad() {
         
@@ -73,10 +77,27 @@ class ImportPhotoViewController: UIViewController {
             for row in resultSet {
                 if let image = row["Path"]?.asString() {
                     let data = FileManager.default.contents(atPath: imagesDirectoryPath+image)
+//                    let image1 = UIImage(data: data!)
+//                    let image2 = DataProviding.resizeImage(image: image1!, newWidth: 192)
+//                    images?.append(image2)
+                    
                     
                     let image1 = UIImage(data: data!)
                     let image2 = DataProviding.resizeImage(image: image1!, newWidth: 192)
-                    images?.append(image2)
+                    let result = DataProviding.intensityValuesFromImage2(image: image2, value: 127)
+                    
+                    pixels = []
+                    for i in 0..<Int((result.pixelValues?.count)!) {
+                        if result.pixelValues![i] == 1 {
+                            pixels.append(white)
+                        } else {
+                            pixels.append(black)
+                        }
+                    }
+                    
+                    let image3 = DataProviding.imageFromBitmap(pixels: pixels, width: 192, height: result.height)
+                    images?.append(image3!)
+                    
                 }
             }
         }
