@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="344" height="232"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="iMR-zx-flk">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iMR-zx-flk">
                         <rect key="frame" x="1" y="1" width="342" height="230"/>
                     </imageView>
                 </subviews>
@@ -37,7 +37,4 @@
             <point key="canvasLocation" x="-174" y="-177"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="1.jpg" width="819" height="460"/>
-    </resources>
 </document>

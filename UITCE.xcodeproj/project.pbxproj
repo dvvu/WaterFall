@@ -18,7 +18,6 @@
 		F8321B1A1E07826800900A52 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8321B181E07826800900A52 /* ImageCollectionViewCell.swift */; };
 		F8321B1B1E07826800900A52 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8321B191E07826800900A52 /* ImageCollectionViewCell.xib */; };
 		F8321B1E1E07834A00900A52 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F8321B1D1E07834A00900A52 /* 1.jpg */; };
-		F8321B3C1E07C91400900A52 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8321B3B1E07C91400900A52 /* SQLite.framework */; };
 		F8321B3E1E07C91A00900A52 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F8321B3D1E07C91A00900A52 /* libsqlite3.tbd */; };
 		F8321B401E07E04700900A52 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F8321B3F1E07E04700900A52 /* libsqlite3.0.tbd */; };
 		F8A4FD281E0C16AC00AD3972 /* ysocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A4FD221E0C16AC00AD3972 /* ysocket.swift */; };
@@ -73,7 +72,6 @@
 		F8321B181E07826800900A52 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		F8321B191E07826800900A52 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		F8321B1D1E07834A00900A52 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
-		F8321B3B1E07C91400900A52 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = "../../Library/Developer/Xcode/DerivedData/UITCE-hkoyvqteorvjllfneegnjjselveq/Build/Products/Debug-iphonesimulator/SQLite.swift/SQLite.framework"; sourceTree = "<group>"; };
 		F8321B3D1E07C91A00900A52 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		F8321B3F1E07E04700900A52 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		F8321B431E07E19A00900A52 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 			files = (
 				F8321B401E07E04700900A52 /* libsqlite3.0.tbd in Frameworks */,
 				F8321B3E1E07C91A00900A52 /* libsqlite3.tbd in Frameworks */,
-				F8321B3C1E07C91400900A52 /* SQLite.framework in Frameworks */,
 				1794A56D8E4F9C579D13F8E5 /* Pods_UITCE.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,7 +208,6 @@
 			children = (
 				F8321B3F1E07E04700900A52 /* libsqlite3.0.tbd */,
 				F8321B3D1E07C91A00900A52 /* libsqlite3.tbd */,
-				F8321B3B1E07C91400900A52 /* SQLite.framework */,
 				1CDBB9815D0796CF8892EC31 /* Pods_UITCE.framework */,
 			);
 			name = Frameworks;
