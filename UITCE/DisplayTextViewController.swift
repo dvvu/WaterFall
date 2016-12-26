@@ -122,16 +122,19 @@ class DisplayTextViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func send(_ sender: Any) {
         let image = UIImage.imageWithLabel(label: self.labelImage)
-        let image2 = DataProviding.resizeImage(image: image, newWidth: 192)
-        let result = DataProviding.intensityValuesFromImage2(image: image2, value: 127)
+        let image2 = DataProviding.resizeImage(image: image, newWidth: CGFloat(valueVanNumber))
+        let result = DataProviding.intensityValuesFromImage2(image: image2, value: UInt8(valueThreshold))
         
         let newString = (result.pixelValues?.description)!
         let newString2 = newString.replacingOccurrences(of: ", ", with: "", options: .literal, range: nil)
         let newString3 = newString2.replacingOccurrences(of: "[", with: "", options: .literal, range: nil)
         let data = newString3.replacingOccurrences(of: "]", with: "", options: .literal, range: nil)
 
-        
-        socketTCP?.send(str: data + "\n")
+        if socketTCP?.send(str: data + "\n").0 == true {
+            DataProviding.SendSuccess(viewController: self)
+        } else {
+             DataProviding.SendFail(viewController: self)
+        }
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

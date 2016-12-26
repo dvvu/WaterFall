@@ -18,8 +18,10 @@ class DrawImageViewController: UIViewController
     weak var canvasView: Canvas?
     weak var paletteView: Palette?
     weak var toolBar: ToolBar?
+    var imagesDirectoryPath:String!
     
     override func viewDidLoad() {
+        conditionSQLite()
         super.viewDidLoad()
         self.initialize()
     }
@@ -47,7 +49,7 @@ class DrawImageViewController: UIViewController
     }
     
     fileprivate func setupToolBar() {
-        let height = (self.paletteView?.frame)!.height * 0.25
+        let height = (self.paletteView?.frame)!.height * 0.35
         let startY = self.view.frame.height - (paletteView?.frame)!.height - height
         let toolBar = ToolBar()
         toolBar.frame = CGRect(x: 0, y: startY, width: self.view.frame.width, height: height)
@@ -177,6 +179,39 @@ class DrawImageViewController: UIViewController
         self.dismiss(animated: true, completion: nil)
     }
     
+    func insertData() {
+        do{
+            let titles = try FileManager.default.contentsOfDirectory(atPath: imagesDirectoryPath)
+            if let err = SD.executeChange(sqlStr: "INSERT INTO ImageData (Path) VALUES (?)", withArgs: ["/\(titles[titles.count-1])" as AnyObject]){
+                //there was an error inserting the new row, handle it here
+            }
+        }catch{
+            print("Error")
+        }
+    }
+    
+    func conditionSQLite() {
+        /*Condition to have path*/
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        // Get the Document directory path
+        let documentDirectorPath:String = paths[0]
+        // Create a new path for the new images folder
+        imagesDirectoryPath = documentDirectorPath.appending("/ImagePicker")
+        //documentDirectorPath.stringByAppendingString("/ImagePicker")
+        
+        var objcBool:ObjCBool = true
+        let isExist = FileManager.default.fileExists(atPath: imagesDirectoryPath, isDirectory: &objcBool)
+        // If the folder with the given path doesn't exist already, create it
+        if isExist == false{
+            do{
+                try FileManager.default.createDirectory(atPath: imagesDirectoryPath, withIntermediateDirectories: true, attributes: nil)
+            }catch{
+                print("Something went wrong while creating a new folder")
+            }
+        }
+    }
+    
+    
 }
 
 
@@ -206,8 +241,25 @@ extension DrawImageViewController: CanvasDelegate
         
         // you can share your image with UIActivityViewController
         if let pngImage = image?.asPNGImage() {
-            let activityViewController = UIActivityViewController(activityItems: [pngImage], applicationActivities: nil)
-            self.present(activityViewController, animated: true, completion: nil)
+//            let activityViewController = UIActivityViewController(activityItems: [pngImage], applicationActivities: nil)
+//            self.present(activityViewController, animated: true, completion: nil)
+            
+            let refreshAlert = UIAlertController(title: "Comfirm", message: "Would you like to save image?", preferredStyle: UIAlertControllerStyle.alert)
+            refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+                var imagePath = NSDate().description
+                imagePath = imagePath.replacingOccurrences(of: " ", with: "")
+                imagePath = self.imagesDirectoryPath.appending("/\(imagePath).png")
+                let data = UIImagePNGRepresentation(pngImage)
+                let success = FileManager.default.createFile(atPath: imagePath, contents: data, attributes: nil)
+                self.insertData()
+            }))
+            
+            refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+                print("Handle Cancel Logic here")
+            }))
+            
+            present(refreshAlert, animated: true, completion: nil)
+            
         }
     }
 }

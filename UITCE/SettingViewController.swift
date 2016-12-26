@@ -79,6 +79,8 @@ class SettingViewController: UIViewController {
             if van! > 0 && dRow! > 0 && dImage! > 0 && value! > 0 && iP != "" && port! > 0 {
                 SD.executeQuery(sqlStr: "UPDATE Setting SET Van = '\(van!.description)',DRow = '\(dRow!.description)', DImage = '\(dImage!.description)', Value = '\(value!.description)', IP = '\(iP)', Port = '\(port!.description)'")
             }
+            valueVanNumber = van!
+            valueThreshold = value!
         }
         
         let refreshAlert = UIAlertController(title: "Infomation", message: "Setting is changed.", preferredStyle: UIAlertControllerStyle.alert)
@@ -100,7 +102,6 @@ class SettingViewController: UIViewController {
         socketTCP = TCPClient(addr: addrConnect, port: portConnect)
         // Connect the socket
         let (success, msg ) = socketTCP!.connect(timeout: 1)
-
     }
     
     @IBAction func `default`(_ sender: Any) {

@@ -61,9 +61,9 @@ class ClockViewController: UIViewController {
                 image1 = DataProviding.takeSnapshotOfView(view: timeLabel)
             }
             
-            let image2 = DataProviding.resizeImage(image: image1,newWidth: CGFloat(192))
+            let image2 = DataProviding.resizeImage(image: image1,newWidth: CGFloat(valueVanNumber))
             
-            let result = DataProviding.intensityValuesFromImage2(image: image2,value: 127)
+            let result = DataProviding.intensityValuesFromImage2(image: image2,value: UInt8(valueThreshold))
             for i in 0..<Int((result.pixelValues?.count)!) {
                 if result.pixelValues![i] == 1 {
                     pixels.append(white)
@@ -82,7 +82,7 @@ class ClockViewController: UIViewController {
 //                socketTCP?.send(str: data3[k*self.vanNumber...k*self.vanNumber+self.vanNumber-1] + "\n")
 //            }
             
-            timeImage.image = DataProviding.imageFromARGB32Bitmap(pixels: pixels, width: 192, height: result.height)
+            timeImage.image = DataProviding.imageFromARGB32Bitmap(pixels: pixels, width: valueVanNumber, height: result.height)
         }
     }
 

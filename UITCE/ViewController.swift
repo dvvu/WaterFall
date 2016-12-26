@@ -8,6 +8,9 @@
 
 import UIKit
 
+var valueVanNumber: Int = 192
+var valueThreshold: Int = 127
+
 class ViewController: UIViewController {
     
     var imagesDirectoryPath:String!
@@ -45,10 +48,10 @@ class ViewController: UIViewController {
         }
         /*Table setting*/
         if let _ = SD.createTable(table: "Setting", withColumnNamesAndTypes: ["Van": .IntVal, "DRow": .IntVal, "DImage": .IntVal, "Value": .IntVal, "IP": .StringVal, "Port": .IntVal]) {
+            getSetting()
             print("Error: Do it again!")
         } else {
-//            InssertData()
-            if let _ = SD.executeChange(sqlStr: "INSERT INTO Setting (Van, DRow, DImage, Value, IP, Port) VALUES (?, ?, ?, ?, ?, ?)", withArgs: [168 as AnyObject,500 as AnyObject,1000 as AnyObject,127 as AnyObject,"192.168.1.1" as AnyObject,90 as AnyObject]) {
+            if let _ = SD.executeChange(sqlStr: "INSERT INTO Setting (Van, DRow, DImage, Value, IP, Port) VALUES (?, ?, ?, ?, ?, ?)", withArgs: [192 as AnyObject,500 as AnyObject,1000 as AnyObject,127 as AnyObject,"192.168.1.1" as AnyObject,90 as AnyObject]) {
             }
         }
         
@@ -57,17 +60,13 @@ class ViewController: UIViewController {
         }
     }
     
-    func loaddingSetting() {
+    func getSetting() {
         let (resultSet, err) = SD.executeQuery(sqlStr: "SELECT * FROM Setting")
         if err != nil {
             print(" Error in loading Data")
         } else {
-            print(resultSet.count)
-            print("Van \((resultSet[0]["Van"]?.asInt())!)")
-            print("IP \(resultSet[0]["IP"]?.asString())")
-
-//            vanNumber = (resultSet[0]["Van"]?.asInt())!
-//            valueThreshold = (resultSet[0]["Value"]?.asInt())!
+            valueVanNumber = (resultSet[0]["Van"]?.asInt())!
+            valueThreshold = (resultSet[0]["Value"]?.asInt())!
 //            vans.text = resultSet[0]["Van"]?.asInt()?.description
 //            rDelay.text = resultSet[0]["DRow"]?.asInt()?.description
 //            iDelay.text = resultSet[0]["DImage"]?.asInt()?.description
