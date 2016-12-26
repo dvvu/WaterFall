@@ -198,6 +198,25 @@ class DataProviding {
         
         return resultImage
     }
+    
+    static func SendSuccess(viewController: UIViewController) {
+        let refreshAlert = UIAlertController(title: "Congatulate", message: "Sent success!", preferredStyle: UIAlertControllerStyle.alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+        }))
+        
+        viewController.present(refreshAlert, animated: true, completion: nil)
+    }
+    
+    
+    static func SendFail(viewController: UIViewController) {
+        let refreshAlert = UIAlertController(title: "Failed", message: "Sorry, Please connect to Server and try again!", preferredStyle: UIAlertControllerStyle.alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+        }))
+        
+        viewController.present(refreshAlert, animated: true, completion: nil)
+    }
 }
 
 extension CGRect{

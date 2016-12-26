@@ -400,81 +400,129 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rL0-X8-wcP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="3IH-1m-uRQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rL0-X8-wcP">
                                 <rect key="frame" x="187" y="0.0" width="188" height="334"/>
-                                <color key="backgroundColor" red="0.74509803921568629" green="0.0" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="SETTING">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                                <state key="normal" title="SETTING" image="pdroplet">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="ZeM-qm-LQi" kind="show" id="wds-IL-J9f"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5FX-vb-Ekj">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5FX-vb-Ekj">
                                 <rect key="frame" x="0.0" y="0.0" width="188" height="334"/>
-                                <color key="backgroundColor" red="0.98431372549019602" green="0.0" blue="0.031372549019607843" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="IMPORT PHOTO">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                                <state key="normal" title="IMPORT PHOTO" image="rdroplet">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="xLG-04-0Oz" kind="show" id="1bZ-av-f58"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Isl-nS-SZf">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Isl-nS-SZf">
                                 <rect key="frame" x="0.0" y="333" width="188" height="334"/>
-                                <color key="backgroundColor" red="0.090196078431372548" green="0.7803921568627451" blue="0.023529411764705882" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="DRAW IMAGE">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                                <state key="normal" title="DRAW IMAGE" image="gdroplet">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="KmR-oj-Sf3" kind="show" id="sIJ-ku-n2e"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXT-Jv-8fv">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXT-Jv-8fv">
                                 <rect key="frame" x="187" y="333" width="188" height="334"/>
-                                <color key="backgroundColor" red="0.0" green="0.0039215686274509803" blue="0.99215686274509807" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="DISPLAY TEXT">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                                <state key="normal" title="DISPLAY TEXT" image="bdroplets">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="mhE-2F-eu2" kind="show" id="5L8-Bs-Gk9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIw-3X-oRP">
-                                <rect key="frame" x="94" y="200" width="187" height="267"/>
-                                <color key="backgroundColor" red="1" green="0.78039215689999997" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="CLOCK">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIw-3X-oRP">
+                                <rect key="frame" x="57" y="203" width="262" height="262"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="pIw-3X-oRP" secondAttribute="height" multiplier="1:1" id="BN5-M0-D7R"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="ydroplets">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="kgI-HO-sAs" kind="show" id="CcC-5q-EoQ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CLOCK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpZ-0u-Hx3">
+                                <rect key="frame" x="158" y="373" width="59" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMPORT PHOTO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4x2-9o-xCx">
+                                <rect key="frame" x="29" y="181.5" width="131" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52i-YI-RCs">
+                                <rect key="frame" x="244" y="181.5" width="74" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DISPLAY TEXT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5AQ-po-krs">
+                                <rect key="frame" x="221" y="564.5" width="120" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DRAW IMAGE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCr-ml-KS1">
+                                <rect key="frame" x="39" y="564.5" width="110" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="TXT-Jv-8fv" firstAttribute="width" secondItem="Isl-nS-SZf" secondAttribute="width" id="01m-9l-zGF"/>
                             <constraint firstItem="pIw-3X-oRP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2Gy-8I-C3X"/>
-                            <constraint firstItem="pIw-3X-oRP" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="2Xb-ug-VjX"/>
+                            <constraint firstItem="pIw-3X-oRP" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="2Xb-ug-VjX"/>
                             <constraint firstAttribute="trailing" secondItem="rL0-X8-wcP" secondAttribute="trailing" id="37l-rl-bbu"/>
                             <constraint firstItem="5FX-vb-Ekj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3y9-yE-izc"/>
+                            <constraint firstItem="pCr-ml-KS1" firstAttribute="centerX" secondItem="Isl-nS-SZf" secondAttribute="centerX" id="6kO-c5-lsx"/>
+                            <constraint firstAttribute="trailing" secondItem="3IH-1m-uRQ" secondAttribute="trailing" id="7Sq-Jj-pzh"/>
                             <constraint firstItem="rL0-X8-wcP" firstAttribute="width" secondItem="5FX-vb-Ekj" secondAttribute="width" id="9HD-Pc-obP"/>
+                            <constraint firstItem="fpZ-0u-Hx3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CBZ-sR-rou"/>
+                            <constraint firstItem="5AQ-po-krs" firstAttribute="centerX" secondItem="TXT-Jv-8fv" secondAttribute="centerX" id="CIf-Qc-kQz"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3IH-1m-uRQ" secondAttribute="bottom" id="DAV-xq-R8Z"/>
+                            <constraint firstItem="3IH-1m-uRQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DO7-pm-jPN"/>
+                            <constraint firstItem="4x2-9o-xCx" firstAttribute="centerX" secondItem="5FX-vb-Ekj" secondAttribute="centerX" id="GIW-TD-jcq"/>
                             <constraint firstItem="Isl-nS-SZf" firstAttribute="height" secondItem="5FX-vb-Ekj" secondAttribute="height" id="HAZ-SY-Cf0"/>
+                            <constraint firstItem="fpZ-0u-Hx3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.15" id="KK4-vI-X9v"/>
+                            <constraint firstItem="52i-YI-RCs" firstAttribute="centerX" secondItem="rL0-X8-wcP" secondAttribute="centerX" id="LLO-A8-G5b"/>
                             <constraint firstItem="pIw-3X-oRP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MIc-g3-Rfn"/>
+                            <constraint firstItem="3IH-1m-uRQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="O4P-6D-oay"/>
                             <constraint firstAttribute="trailing" secondItem="TXT-Jv-8fv" secondAttribute="trailing" id="Rc3-e0-RLD"/>
+                            <constraint firstItem="5AQ-po-krs" firstAttribute="centerY" secondItem="TXT-Jv-8fv" secondAttribute="centerY" multiplier="1.15" id="SAO-IJ-uBM"/>
+                            <constraint firstItem="4x2-9o-xCx" firstAttribute="centerY" secondItem="5FX-vb-Ekj" secondAttribute="centerY" multiplier="1.15" id="Tdu-46-Xzb"/>
                             <constraint firstItem="5FX-vb-Ekj" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="Tmi-eM-nkz"/>
                             <constraint firstItem="TXT-Jv-8fv" firstAttribute="height" secondItem="Isl-nS-SZf" secondAttribute="height" id="TvA-GD-W7h"/>
                             <constraint firstItem="5FX-vb-Ekj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="VKY-PZ-DtZ"/>
-                            <constraint firstItem="pIw-3X-oRP" firstAttribute="height" secondItem="5FX-vb-Ekj" secondAttribute="height" multiplier="0.8" id="XQH-Wm-QMv"/>
                             <constraint firstItem="Isl-nS-SZf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XXP-Vi-KEE"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Isl-nS-SZf" secondAttribute="bottom" id="YQS-wA-0ef"/>
                             <constraint firstItem="rL0-X8-wcP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="ZxP-m4-rLG"/>
+                            <constraint firstItem="pCr-ml-KS1" firstAttribute="centerY" secondItem="Isl-nS-SZf" secondAttribute="centerY" multiplier="1.15" id="eXF-ar-bGr"/>
                             <constraint firstItem="rL0-X8-wcP" firstAttribute="height" secondItem="5FX-vb-Ekj" secondAttribute="height" id="ezm-qU-DhM"/>
+                            <constraint firstItem="52i-YI-RCs" firstAttribute="centerY" secondItem="rL0-X8-wcP" secondAttribute="centerY" multiplier="1.15" id="rMc-Ds-mB5"/>
                             <constraint firstItem="5FX-vb-Ekj" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="rRk-4k-1h7"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="TXT-Jv-8fv" secondAttribute="bottom" id="u5a-EO-0Ot"/>
                             <constraint firstItem="Isl-nS-SZf" firstAttribute="width" secondItem="5FX-vb-Ekj" secondAttribute="width" id="ySc-KH-Ir3"/>
@@ -1064,4 +1112,12 @@
             <point key="canvasLocation" x="933.60000000000002" y="742.5787106446777"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background.jpg" width="450" height="400"/>
+        <image name="bdroplets" width="1669" height="2400"/>
+        <image name="gdroplet" width="256" height="256"/>
+        <image name="pdroplet" width="256" height="256"/>
+        <image name="rdroplet" width="256" height="256"/>
+        <image name="ydroplets" width="3251" height="3251"/>
+    </resources>
 </document>

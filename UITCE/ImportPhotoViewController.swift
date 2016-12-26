@@ -83,8 +83,8 @@ class ImportPhotoViewController: UIViewController {
                     
                     
                     let image1 = UIImage(data: data!)
-                    let image2 = DataProviding.resizeImage(image: image1!, newWidth: 192)
-                    let result = DataProviding.intensityValuesFromImage2(image: image2, value: 127)
+                    let image2 = DataProviding.resizeImage(image: image1!, newWidth: CGFloat(valueVanNumber))
+                    let result = DataProviding.intensityValuesFromImage2(image: image2, value: UInt8(valueThreshold))
                     
                     pixels = []
                     for i in 0..<Int((result.pixelValues?.count)!) {
@@ -95,7 +95,7 @@ class ImportPhotoViewController: UIViewController {
                         }
                     }
                     
-                    let image3 = DataProviding.imageFromBitmap(pixels: pixels, width: 192, height: result.height)
+                    let image3 = DataProviding.imageFromBitmap(pixels: pixels, width: valueVanNumber, height: result.height)
                     images?.append(image3!)
                     
                 }
@@ -105,7 +105,6 @@ class ImportPhotoViewController: UIViewController {
             self.number = number
         }
         self.importPhotoCollectionView.reloadData()
-        
     }
     
     func conditionSQLite() {
