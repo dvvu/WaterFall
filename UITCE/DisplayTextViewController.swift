@@ -23,6 +23,10 @@ class DisplayTextViewController: UIViewController, UITextFieldDelegate {
                                    "Arial-BoldMT",
                                    "Arial-ItalicMT",
                                    "Arial-BoldItalicMT",
+                                   "Georgia",
+                                   "Georgia-Bold",
+                                   "Georgia-Italic",
+                                   "Georgia-BoldItalic",
                                    ]
     /*
      "Arial",
@@ -133,15 +137,14 @@ class DisplayTextViewController: UIViewController, UITextFieldDelegate {
             let image = UIImage.imageWithLabel(label: self.labelImage)
             let image2 = DataProviding.resizeImage(image: image, newWidth: CGFloat(valueVanNumber))
             let result = DataProviding.intensityValuesFromImage2(image: image2, value: UInt8(valueThreshold))
-            
-            
+        
             let height = (result.data!.count)/(valueVanNumber/8)
             var Array: [[UInt8]] = [[]]
             
             for j in 0..<height {
                 var dataArray: [UInt8] = []
                 dataArray = [UInt8](repeating: 0, count: (valueVanNumber/8))
-                for i in 0...7 {
+                for i in 0..<(valueVanNumber/8) {
                     dataArray[i] = result.data![i + (height - 1 - j)*(valueVanNumber/8)]
                 }
                 Array.append(dataArray)
@@ -278,11 +281,11 @@ extension DisplayTextViewController : UIPickerViewDelegate, UIPickerViewDataSour
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         if isSelected == true {
-             size.text = pickerDataSize[row].description + "⎊"
+             size.text = pickerDataSize[row].description + "▼"
              labelImage.font = labelImage.font.withSize(CGFloat(pickerDataSize[row]))
              fontSize = CGFloat(pickerDataSize[row])
         } else {
-             font.text = pickerDataFont[row] + "⎊"
+             font.text = pickerDataFont[row] + "▼"
              labelImage.font = UIFont.init(name: pickerDataFont[row], size: fontSize)
         }
 

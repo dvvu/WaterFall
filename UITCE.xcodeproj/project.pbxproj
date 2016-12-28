@@ -58,7 +58,7 @@
 		1CDBB9815D0796CF8892EC31 /* Pods_UITCE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UITCE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35D8EECF6FCD9C1FB246EEB6 /* Pods-UITCE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITCE.release.xcconfig"; path = "Pods/Target Support Files/Pods-UITCE/Pods-UITCE.release.xcconfig"; sourceTree = "<group>"; };
 		50B2E48914BD192CC2211112 /* Pods-UITCE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITCE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UITCE/Pods-UITCE.debug.xcconfig"; sourceTree = "<group>"; };
-		F8321AE41E077B3C00900A52 /* WatterFall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatterFall.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8321AE41E077B3C00900A52 /* Droplets.ce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Droplets.ce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8321AE71E077B3C00900A52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8321AE91E077B3C00900A52 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F8321AEC1E077B3C00900A52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 		F8321AE51E077B3C00900A52 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F8321AE41E077B3C00900A52 /* WatterFall.app */,
+				F8321AE41E077B3C00900A52 /* Droplets.ce.app */,
 				F8321AF81E077B3C00900A52 /* UITCETests.xctest */,
 				F8321B031E077B3C00900A52 /* UITCEUITests.xctest */,
 			);
@@ -273,7 +273,7 @@
 			);
 			name = UITCE;
 			productName = UITCE;
-			productReference = F8321AE41E077B3C00900A52 /* WatterFall.app */;
+			productReference = F8321AE41E077B3C00900A52 /* Droplets.ce.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F8321AF71E077B3C00900A52 /* UITCETests */ = {
@@ -618,7 +618,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uit.UITCE;
-				PRODUCT_NAME = WatterFall;
+				PRODUCT_NAME = Droplets.ce;
 				SWIFT_OBJC_BRIDGING_HEADER = Header.h;
 				SWIFT_VERSION = 3.0;
 			};
@@ -634,7 +634,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uit.UITCE;
-				PRODUCT_NAME = WatterFall;
+				PRODUCT_NAME = Droplets.ce;
 				SWIFT_OBJC_BRIDGING_HEADER = Header.h;
 				SWIFT_VERSION = 3.0;
 			};

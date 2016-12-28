@@ -112,17 +112,17 @@ class ImportPhotoViewController: UIViewController {
         TYPE = 3
         self.importPhotoCollectionView.backgroundColor = UIColor.white
         
-        for i in 0..<indexSend.count {
+        for k in 0..<indexSend.count {
             
             if isConnected == true {
                 /*Send Bytes*/
-                let height = (Array[indexSend[i]].count)/(valueVanNumber/8)
+                let height = (Array[indexSend[k]].count)/(valueVanNumber/8)
               
                 for j in 0..<height {
                     var dataArray: [UInt8] = []
                     dataArray = [UInt8](repeating: 0, count: (valueVanNumber/8))
-                    for i in 0...7 {
-                        dataArray[i] = Array[indexSend[i]][i + (height - 1 - j)*(valueVanNumber/8)]
+                    for i in 0..<(valueVanNumber/8) {
+                        dataArray[i] = Array[indexSend[k]][i + (height - 1 - j)*(valueVanNumber/8)]
                     }
                     
                     if DataProviding.sendData(foo: dataArray) == true {
@@ -189,7 +189,7 @@ class ImportPhotoViewController: UIViewController {
                     let image1 = UIImage(data: data!)
                     let image2 = DataProviding.resizeImage(image: image1!, newWidth: CGFloat(valueVanNumber))
                     let result = DataProviding.intensityValuesFromImage2(image: image2, value: UInt8(valueThreshold))
-                    Array.append(result.pixelValues!) //pixelValues-> String text, data-> bytes board
+                    Array.append(result.data!) //pixelValues-> String text, data-> bytes board
                     pixels = []
                     for i in 0..<Int((result.pixelValues?.count)!) {
                         if result.pixelValues![i] == 1 {

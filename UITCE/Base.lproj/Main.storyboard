@@ -15,7 +15,7 @@
         <!--Setting View Controller-->
         <scene sceneID="xOL-hi-IXh">
             <objects>
-                <viewController id="ZeM-qm-LQi" customClass="SettingViewController" customModule="WatterFall" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ZeM-qm-LQi" customClass="SettingViewController" customModule="Droplets_ce" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vps-LN-c3l"/>
                         <viewControllerLayoutGuide type="bottom" id="Dcg-C4-pg4"/>
@@ -399,7 +399,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WatterFall" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Droplets_ce" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -544,7 +544,7 @@
         <!--Clock View Controller-->
         <scene sceneID="tDY-X4-Byv">
             <objects>
-                <viewController id="kgI-HO-sAs" customClass="ClockViewController" customModule="WatterFall" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kgI-HO-sAs" customClass="ClockViewController" customModule="Droplets_ce" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Rrc-6p-PvR"/>
                         <viewControllerLayoutGuide type="bottom" id="3Mr-so-F89"/>
@@ -738,7 +738,7 @@
         <!--Import Photo View Controller-->
         <scene sceneID="qu6-0i-SMp">
             <objects>
-                <viewController id="xLG-04-0Oz" customClass="ImportPhotoViewController" customModule="WatterFall" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xLG-04-0Oz" customClass="ImportPhotoViewController" customModule="Droplets_ce" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XAh-pN-gcc"/>
                         <viewControllerLayoutGuide type="bottom" id="ndi-1w-2ZT"/>
@@ -909,7 +909,7 @@
         <!--Draw Image View Controller-->
         <scene sceneID="dbq-zy-Kgh">
             <objects>
-                <viewController id="KmR-oj-Sf3" customClass="DrawImageViewController" customModule="WatterFall" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KmR-oj-Sf3" customClass="DrawImageViewController" customModule="Droplets_ce" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9fc-QF-fdb"/>
                         <viewControllerLayoutGuide type="bottom" id="Xpg-iJ-tcH"/>
@@ -976,7 +976,7 @@
         <!--Display Text View Controller-->
         <scene sceneID="E7Y-eT-J5z">
             <objects>
-                <viewController id="mhE-2F-eu2" customClass="DisplayTextViewController" customModule="WatterFall" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mhE-2F-eu2" customClass="DisplayTextViewController" customModule="Droplets_ce" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Iyy-MR-4jg"/>
                         <viewControllerLayoutGuide type="bottom" id="EcD-Ef-iXb"/>
@@ -1103,20 +1103,23 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14⎊" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EaK-3N-taq">
-                                        <rect key="frame" x="55" y="0.0" width="29" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14▼" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EaK-3N-taq">
+                                        <rect key="frame" x="55" y="0.0" width="33" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arial⎊" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBB-Yr-XnX">
-                                        <rect key="frame" x="290" y="0.0" width="45" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arial▼" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBB-Yr-XnX">
+                                        <rect key="frame" x="275" y="0.0" width="60" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="aZo-jU-OBR"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Font:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEX-3A-W4Z">
-                                        <rect key="frame" x="239" y="0.0" width="43" height="21"/>
+                                        <rect key="frame" x="224" y="0.0" width="43" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1142,7 +1145,7 @@
                                 </constraints>
                             </pickerView>
                         </subviews>
-                        <color key="backgroundColor" red="0.80888242999306148" green="0.89666597512758639" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.63729453030047689" green="0.85678350358655098" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="40t-xy-XQF" secondAttribute="trailing" id="0OA-Nl-Pdy"/>
                             <constraint firstItem="AES-3g-t1C" firstAttribute="trailing" secondItem="pwX-P7-kK9" secondAttribute="trailingMargin" id="5VV-62-RIE"/>
