@@ -10,7 +10,9 @@ import UIKit
 
 var valueVanNumber: Int = 192
 var valueThreshold: Int = 127
-
+var valueRowDelay: Int = 100
+var isConnected: Bool = false
+var sizeBytes: UInt8 = 0x08
 class ViewController: UIViewController {
     
     var imagesDirectoryPath:String!
@@ -67,6 +69,23 @@ class ViewController: UIViewController {
         } else {
             valueVanNumber = (resultSet[0]["Van"]?.asInt())!
             valueThreshold = (resultSet[0]["Value"]?.asInt())!
+            valueRowDelay = (resultSet[0]["DRow"]?.asInt())!
+            
+            switch valueVanNumber {
+            case 192:
+                sizeBytes = 0x18
+            case 128:
+                sizeBytes = 0x10
+            case 96:
+                sizeBytes = 0x0C
+            case 64:
+                sizeBytes = 0x08
+            case 32:
+                sizeBytes = 0x04
+            default:
+                sizeBytes = 0x08
+            }
+            
 //            vans.text = resultSet[0]["Van"]?.asInt()?.description
 //            rDelay.text = resultSet[0]["DRow"]?.asInt()?.description
 //            iDelay.text = resultSet[0]["DImage"]?.asInt()?.description

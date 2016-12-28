@@ -21,6 +21,7 @@
 		F8321B3E1E07C91A00900A52 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F8321B3D1E07C91A00900A52 /* libsqlite3.tbd */; };
 		F8321B401E07E04700900A52 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F8321B3F1E07E04700900A52 /* libsqlite3.0.tbd */; };
 		F846E52E1E0D25E4001768CB /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F846E52D1E0D25E4001768CB /* background.jpg */; };
+		F85712771E10CA7100132DBB /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85712761E10CA7100132DBB /* Toast.swift */; };
 		F8A4FD281E0C16AC00AD3972 /* ysocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A4FD221E0C16AC00AD3972 /* ysocket.swift */; };
 		F8A4FD291E0C16AC00AD3972 /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = F8A4FD231E0C16AC00AD3972 /* ytcpsocket.c */; };
 		F8A4FD2A1E0C16AC00AD3972 /* ytcpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A4FD241E0C16AC00AD3972 /* ytcpsocket.swift */; };
@@ -77,6 +78,7 @@
 		F8321B3F1E07E04700900A52 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		F8321B431E07E19A00900A52 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		F846E52D1E0D25E4001768CB /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		F85712761E10CA7100132DBB /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		F8A4FD221E0C16AC00AD3972 /* ysocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ysocket.swift; sourceTree = "<group>"; };
 		F8A4FD231E0C16AC00AD3972 /* ytcpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ytcpsocket.c; sourceTree = "<group>"; };
 		F8A4FD241E0C16AC00AD3972 /* ytcpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ytcpsocket.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 		F8A4FD211E0C169D00AD3972 /* Socket */ = {
 			isa = PBXGroup;
 			children = (
+				F85712761E10CA7100132DBB /* Toast.swift */,
 				F8A4FD2E1E0C184B00AD3972 /* SocketManager.swift */,
 				F8A4FD221E0C16AC00AD3972 /* ysocket.swift */,
 				F8A4FD231E0C16AC00AD3972 /* ytcpsocket.c */,
@@ -443,6 +446,7 @@
 			files = (
 				F8E486ED1E092C9500009C45 /* ImportPhotoViewController.swift in Sources */,
 				F8E486EB1E08E28300009C45 /* DataProviding.swift in Sources */,
+				F85712771E10CA7100132DBB /* Toast.swift in Sources */,
 				F8A4FD2F1E0C184B00AD3972 /* SocketManager.swift in Sources */,
 				F8321AEA1E077B3C00900A52 /* ViewController.swift in Sources */,
 				F8FD675A1E0A229500D49F01 /* ClockViewController.swift in Sources */,

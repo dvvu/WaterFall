@@ -15,6 +15,7 @@ class ClockViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var timeImage: UIImageView!
     @IBOutlet weak var status: UIButton!
+    @IBOutlet weak var signal: UIButton!
    
     var rHours: String = ""
     var rMinutes: String = ""
@@ -31,10 +32,13 @@ class ClockViewController: UIViewController {
         self.myClock.realTime = true
         self.myClock.currentTime = true
         self.myClock.setClockToCurrentTime(animated: true)
-        // Do any additional setup after loading the view.
         self.myClock.delegate = self
         self.myClock.startRealTime()
-        // Do any additional setup after loading the view.
+        if isConnected == true {
+            signal.setImage(UIImage(named: "on"), for: .normal)
+        } else {
+            signal.setImage(UIImage(named: "off"), for: .normal)
+        }
     }
 
     override func didReceiveMemoryWarning() {

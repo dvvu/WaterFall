@@ -10,20 +10,28 @@ import UIKit
 
 class ImportPhotoViewController: UIViewController {
 
+    @IBOutlet weak var signal: UIButton!
     var imagesDirectoryPath:String!
     var imagePicker = UIImagePickerController()
     var images: [UIImage]?
     var number: Int = 0
-    var isDelete: Bool = false
-    
+    var TYPE: Int = 0 /*0-> None; 1-> delete; 2 ->select;3->send*/
     var pixels = [DataProviding.PixelData()]
     let black = DataProviding.PixelData(a: 255, r: 0, g: 0, b: 0)
     let white = DataProviding.PixelData(a: 255, r: 255, g: 255, b: 255)
+    var ischecked: [Bool] = [false]
+    var Array: [[UInt8]] = [[]]
+    var indexSend: [Int] = []
     
     @IBOutlet weak var importPhotoCollectionView: UICollectionView!
     override func viewDidLoad() {
-        
         super.viewDidLoad()
+        
+        if isConnected == true {
+            signal.setImage(UIImage(named: "on"), for: .normal)
+        } else {
+            signal.setImage(UIImage(named: "off"), for: .normal)
+        }
         
         importPhotoCollectionView!.register(UINib(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ImageCollectionViewCell")
         
@@ -58,18 +66,119 @@ class ImportPhotoViewController: UIViewController {
     }
 
     @IBAction func deleteButton(_ sender: Any) {
-        if isDelete == true {
-            isDelete = false
+       
+        if TYPE == 0 {
+            /*None*/
+            TYPE = 1
+            self.importPhotoCollectionView.backgroundColor = UIColor.red
+        } else if TYPE == 1 {
+            TYPE = 0
+            self.importPhotoCollectionView.backgroundColor = UIColor.white
+            /*Delete*/
+        } else if TYPE == 2{
+            /*Choice*/
+            TYPE = 1
+            self.importPhotoCollectionView.backgroundColor = UIColor.red
+        }else {
+            /*Send*/
+            TYPE = 1
+            self.importPhotoCollectionView.backgroundColor = UIColor.red
+        }
+        self.importPhotoCollectionView.reloadData()
+    }
+    
+    @IBAction func selected(_ sender: Any) {
+        if TYPE == 0 {
+            /*None*/
+            TYPE = 2
+            self.importPhotoCollectionView.backgroundColor = UIColor.blue
+        } else if TYPE == 1 {
+            TYPE = 2
+            self.importPhotoCollectionView.backgroundColor = UIColor.blue
+            /*Delete*/
+        } else if TYPE == 2{
+            /*Choice*/
+            TYPE = 0
             self.importPhotoCollectionView.backgroundColor = UIColor.white
         } else {
-            isDelete = true
-            self.importPhotoCollectionView.backgroundColor = UIColor.red
+            /*Send*/
+            TYPE = 2
+            self.importPhotoCollectionView.backgroundColor = UIColor.blue
+        }
+        self.importPhotoCollectionView.reloadData()
+    }
+    
+    @IBAction func send(_ sender: Any) {
+        TYPE = 3
+        self.importPhotoCollectionView.backgroundColor = UIColor.white
+        
+        for i in 0..<indexSend.count {
+            
+            if isConnected == true {
+                /*Send Bytes*/
+                let height = (Array[indexSend[i]].count)/(valueVanNumber/8)
+              
+                for j in 0..<height {
+                    var dataArray: [UInt8] = []
+                    dataArray = [UInt8](repeating: 0, count: (valueVanNumber/8))
+                    for i in 0...7 {
+                        dataArray[i] = Array[indexSend[i]][i + (height - 1 - j)*(valueVanNumber/8)]
+                    }
+                    
+                    if DataProviding.sendData(foo: dataArray) == true {
+                        DataProviding.SendSuccess(viewController: self)
+                        signal.setImage(UIImage(named: "on"), for: .normal)
+                        isConnected = true
+                    } else {
+                        DataProviding.SendFail(viewController: self)
+                        signal.setImage(UIImage(named: "off"), for: .normal)
+                        isConnected = false
+                    }
+                    
+                    let delay = valueRowDelay*1000
+                    usleep(useconds_t(delay))
+                }
+                
+//                for a in Array1 {
+//                    if DataProviding.sendData(foo: a) == true {
+//                        DataProviding.SendSuccess(viewController: self)
+//                        signal.setImage(UIImage(named: "on"), for: .normal)
+//                        isConnected = true
+//                    } else {
+//                        DataProviding.SendFail(viewController: self)
+//                        signal.setImage(UIImage(named: "off"), for: .normal)
+//                        isConnected = false
+//                    }
+//                    usleep(valueRowDelay*1000)
+//                }
+                
+                /*Test for Eclipse*/
+//                let newString = (Array[indexSend[i]].description)
+//                let newString2 = newString.replacingOccurrences(of: ", ", with: "", options: .literal, range: nil)
+//                let newString3 = newString2.replacingOccurrences(of: "[", with: "", options: .literal, range: nil)
+//                let data = newString3.replacingOccurrences(of: "]", with: "", options: .literal, range: nil)
+//    
+//                if socketTCP?.send(str: data + "\n").0 == true {
+//                    DataProviding.SendSuccess(viewController: self)
+//                    signal.setImage(UIImage(named: "on"), for: .normal)
+//                    isConnected = true
+//                } else {
+//                    DataProviding.SendFail(viewController: self)
+//                    signal.setImage(UIImage(named: "off"), for: .normal)
+//                    isConnected = false
+//                }
+                
+            } else {
+                DataProviding.SendFail(viewController: self)
+            }
+
         }
     }
     
     func RepareData() {
         images?.removeAll()
         images = []
+        Array = []
         let (resultSet, err) = SD.executeQuery(sqlStr: "SELECT * FROM ImageData")
         if err != nil {
             
@@ -77,15 +186,10 @@ class ImportPhotoViewController: UIViewController {
             for row in resultSet {
                 if let image = row["Path"]?.asString() {
                     let data = FileManager.default.contents(atPath: imagesDirectoryPath+image)
-//                    let image1 = UIImage(data: data!)
-//                    let image2 = DataProviding.resizeImage(image: image1!, newWidth: 192)
-//                    images?.append(image2)
-                    
-                    
                     let image1 = UIImage(data: data!)
                     let image2 = DataProviding.resizeImage(image: image1!, newWidth: CGFloat(valueVanNumber))
                     let result = DataProviding.intensityValuesFromImage2(image: image2, value: UInt8(valueThreshold))
-                    
+                    Array.append(result.pixelValues!) //pixelValues-> String text, data-> bytes board
                     pixels = []
                     for i in 0..<Int((result.pixelValues?.count)!) {
                         if result.pixelValues![i] == 1 {
@@ -104,6 +208,13 @@ class ImportPhotoViewController: UIViewController {
         if let number = images?.count {
             self.number = number
         }
+        
+        if number>0 {
+            for _ in 0..<number {
+                ischecked += [false]
+            }
+        }
+        
         self.importPhotoCollectionView.reloadData()
     }
     
@@ -148,8 +259,6 @@ class ImportPhotoViewController: UIViewController {
         self.RepareData()
         self.importPhotoCollectionView.reloadData()
     }
-    
-    
 }
 
 extension ImportPhotoViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -160,22 +269,32 @@ extension ImportPhotoViewController: UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return number
-
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as! ImageCollectionViewCell
         cell.image.image = self.images![indexPath.row]
+        
+        if ischecked[(indexPath as NSIndexPath).row] == true {
+            cell.ischecked.setImage(UIImage(named: "ic_checked"), for: .normal)
+        } else {
+            cell.ischecked.setImage(UIImage(named: "ic_unchecked"), for: .normal)
+        }
+        if TYPE == 2 || TYPE == 3 {
+            cell.ischecked.isHidden = false
+        } else {
+            cell.ischecked.isHidden = true
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if isDelete == true {
+        if TYPE == 1 {
             let refreshAlert = UIAlertController(title: "Delete", message: "Do you want to delete this immage?", preferredStyle: UIAlertControllerStyle.alert)
             
             refreshAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
                 self.deleteImage(index: indexPath.row)
-                self.isDelete = false
+                self.TYPE = 0
                 self.importPhotoCollectionView.backgroundColor = UIColor.white
                 
             }))
@@ -184,20 +303,19 @@ extension ImportPhotoViewController: UICollectionViewDelegate, UICollectionViewD
             }))
             
             present(refreshAlert, animated: true, completion: nil)
-        } else {
-//            let (resultSet, err) = SD.executeQuery(sqlStr: "SELECT * FROM ImageData")
-//            if err != nil {
-//            } else {
-//                if let image = resultSet[indexPath.row]["Path"]?.asString() {
-//                    print(image)
-//                    if let vc = UIStoryboard.detailViewController() {
-//                        vc.imageURL = image
-//                        self.presentViewController(vc, animated: true, completion: nil)
-//                    }
-//                }
-//            }
+        } else if TYPE == 2 {
+            let currentCell = collectionView.cellForItem(at: indexPath) as! ImageCollectionViewCell
+            
+            if ischecked[(indexPath as NSIndexPath).row] == false {
+                currentCell.ischecked.setImage(UIImage(named: "ic_checked"), for: .normal)
+                ischecked[(indexPath as NSIndexPath).row] = true
+                indexSend += [indexPath.row]
+            } else {
+                currentCell.ischecked.setImage(UIImage(named: "ic_unchecked"), for: .normal)
+                ischecked[(indexPath as NSIndexPath).row] = false
+                indexSend.removeObject(object: indexPath.row)
+            }
         }
-        
     }
 }
 
@@ -217,10 +335,7 @@ extension ImportPhotoViewController: UIImagePickerControllerDelegate, UINavigati
         } else{
             print("Something went wrong")
         }
-        
-//        self.dismiss(animated: true, completion: nil)
     }
-    
     
     func insertData() {
         do{
@@ -239,3 +354,14 @@ extension String {
         self = self + str
     }
 }
+
+extension Array where Element: Equatable {
+    
+    // Remove first collection element that is equal to the given `object`:
+    mutating func removeObject(object: Element) {
+        if let index = index(of: object) {
+            remove(at: index)
+        }
+    }
+}
+

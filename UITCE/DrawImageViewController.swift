@@ -15,6 +15,7 @@ import MobileCoreServices
 
 class DrawImageViewController: UIViewController
 {
+    @IBOutlet weak var signal: UIButton!
     weak var canvasView: Canvas?
     weak var paletteView: Palette?
     weak var toolBar: ToolBar?
@@ -24,6 +25,11 @@ class DrawImageViewController: UIViewController
         conditionSQLite()
         super.viewDidLoad()
         self.initialize()
+        if isConnected == true {
+            signal.setImage(UIImage(named: "on"), for: .normal)
+        } else {
+            signal.setImage(UIImage(named: "off"), for: .normal)
+        }
     }
     
     override func didReceiveMemoryWarning() {

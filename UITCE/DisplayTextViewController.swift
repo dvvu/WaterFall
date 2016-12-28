@@ -15,6 +15,7 @@ class DisplayTextViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var size: UILabel!
     @IBOutlet weak var font: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var signal: UIButton!
    
     var imagesDirectoryPath:String!
     var pickerDataSize:[Int] = []
@@ -46,6 +47,12 @@ class DisplayTextViewController: UIViewController, UITextFieldDelegate {
         
         for i in 14...100 {
             pickerDataSize.append(i)
+        }
+        
+        if isConnected == true {
+            signal.setImage(UIImage(named: "on"), for: .normal)
+        } else {
+            signal.setImage(UIImage(named: "off"), for: .normal)
         }
     }
     
@@ -121,19 +128,56 @@ class DisplayTextViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func send(_ sender: Any) {
-        let image = UIImage.imageWithLabel(label: self.labelImage)
-        let image2 = DataProviding.resizeImage(image: image, newWidth: CGFloat(valueVanNumber))
-        let result = DataProviding.intensityValuesFromImage2(image: image2, value: UInt8(valueThreshold))
         
-        let newString = (result.pixelValues?.description)!
-        let newString2 = newString.replacingOccurrences(of: ", ", with: "", options: .literal, range: nil)
-        let newString3 = newString2.replacingOccurrences(of: "[", with: "", options: .literal, range: nil)
-        let data = newString3.replacingOccurrences(of: "]", with: "", options: .literal, range: nil)
-
-        if socketTCP?.send(str: data + "\n").0 == true {
-            DataProviding.SendSuccess(viewController: self)
+        if isConnected == true {
+            let image = UIImage.imageWithLabel(label: self.labelImage)
+            let image2 = DataProviding.resizeImage(image: image, newWidth: CGFloat(valueVanNumber))
+            let result = DataProviding.intensityValuesFromImage2(image: image2, value: UInt8(valueThreshold))
+            
+            
+            let height = (result.data!.count)/(valueVanNumber/8)
+            var Array: [[UInt8]] = [[]]
+            
+            for j in 0..<height {
+                var dataArray: [UInt8] = []
+                dataArray = [UInt8](repeating: 0, count: (valueVanNumber/8))
+                for i in 0...7 {
+                    dataArray[i] = result.data![i + (height - 1 - j)*(valueVanNumber/8)]
+                }
+                Array.append(dataArray)
+            }
+            
+            for a in Array {
+                if DataProviding.sendData(foo: a) == true {
+                    DataProviding.SendSuccess(viewController: self)
+                    signal.setImage(UIImage(named: "on"), for: .normal)
+                    isConnected = true
+                } else {
+                    DataProviding.SendFail(viewController: self)
+                    signal.setImage(UIImage(named: "off"), for: .normal)
+                    isConnected = false
+                }
+                let delay = valueRowDelay*1000
+                usleep(useconds_t(delay))
+            }
+            
+//            let newString = (result.pixelValues?.description)!
+//            let newString2 = newString.replacingOccurrences(of: ", ", with: "", options: .literal, range: nil)
+//            let newString3 = newString2.replacingOccurrences(of: "[", with: "", options: .literal, range: nil)
+//            let data = newString3.replacingOccurrences(of: "]", with: "", options: .literal, range: nil)
+            
+//            if socketTCP?.send(str: data + "\n").0 == true {
+//                DataProviding.SendSuccess(viewController: self)
+//                signal.setImage(UIImage(named: "on"), for: .normal)
+//                isConnected = true
+//            } else {
+//                DataProviding.SendFail(viewController: self)
+//                signal.setImage(UIImage(named: "off"), for: .normal)
+//                isConnected = false
+//            }
+            
         } else {
-             DataProviding.SendFail(viewController: self)
+            DataProviding.SendFail(viewController: self)
         }
     }
     
