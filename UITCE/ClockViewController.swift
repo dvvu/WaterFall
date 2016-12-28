@@ -75,22 +75,45 @@ class ClockViewController: UIViewController {
                     pixels.append(black)
                 }
             }
-//            let newString = (result.pixelValues?.description)!
-//            let data = newString.stringByReplacingOccurrencesOfString(", ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
-//            let data2 = data.stringByReplacingOccurrencesOfString("[", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
-//            let data3 = data2.stringByReplacingOccurrencesOfString("]", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
-            
-            //            DataProviding.sendMessage(data)
-            
-//            for k in 0..<data3.characters.count/self.vanNumber {
-//                socketTCP?.send(str: data3[k*self.vanNumber...k*self.vanNumber+self.vanNumber-1] + "\n")
-//            }
-            
             timeImage.image = DataProviding.imageFromARGB32Bitmap(pixels: pixels, width: valueVanNumber, height: result.height)
+            
+            let height = (result.data!.count)/(valueVanNumber/8)     
+            if isConnected == true {
+                for j in 0..<height {
+                    var dataArray: [UInt8] = []
+                    dataArray = [UInt8](repeating: 0, count: (valueVanNumber/8))
+                    for i in 0..<(valueVanNumber/8) {
+                        dataArray[i] = result.data![i + (height - 1 - j)*(valueVanNumber/8)]
+                    }
+                    
+                    if DataProviding.sendData(foo: dataArray) == true {
+                        DataProviding.SendSuccess(viewController: self)
+                        signal.setImage(UIImage(named: "on"), for: .normal)
+                        isConnected = true
+                    } else {
+                        DataProviding.SendFail(viewController: self)
+                        signal.setImage(UIImage(named: "off"), for: .normal)
+                        isConnected = false
+                    }
+                    let delay = valueRowDelay*1000
+                    usleep(useconds_t(delay))
+                    
+                }
+            } else {
+                DataProviding.SendFail(viewController: self)
+            }
+            
         }
     }
 
     @IBAction func status(_ sender: Any) {
+        if choiceStatus == true {
+            choiceStatus = false
+            status.setTitle("DIGITAL", for: .normal)
+        } else {
+            choiceStatus = true
+             status.setTitle("ANALOG", for: .normal)
+        }
     }
  
     @IBAction func send(_ sender: Any) {
