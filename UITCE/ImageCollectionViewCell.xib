@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,20 +23,34 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iMR-zx-flk">
                         <rect key="frame" x="1" y="1" width="342" height="230"/>
                     </imageView>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFM-IZ-Wd9">
+                        <rect key="frame" x="8" y="8" width="68.5" height="68.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="aFM-IZ-Wd9" secondAttribute="height" multiplier="1:1" id="q9X-Tg-Hdj"/>
+                        </constraints>
+                        <state key="normal" image="ic_unchecked"/>
+                    </button>
                 </subviews>
             </view>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="aFM-IZ-Wd9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="HFJ-1j-iyP"/>
                 <constraint firstItem="iMR-zx-flk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1" id="Io9-1G-Qxr"/>
                 <constraint firstItem="iMR-zx-flk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="1" id="ff9-el-PBP"/>
+                <constraint firstItem="aFM-IZ-Wd9" firstAttribute="width" secondItem="iMR-zx-flk" secondAttribute="width" multiplier="0.2" id="hC6-Nj-cGn"/>
+                <constraint firstItem="aFM-IZ-Wd9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="khF-XR-YVI"/>
                 <constraint firstAttribute="bottom" secondItem="iMR-zx-flk" secondAttribute="bottom" constant="1" id="owl-5q-MeQ"/>
                 <constraint firstAttribute="trailing" secondItem="iMR-zx-flk" secondAttribute="trailing" constant="1" id="tlc-RQ-plt"/>
             </constraints>
             <size key="customSize" width="344" height="232"/>
             <connections>
                 <outlet property="image" destination="iMR-zx-flk" id="9T7-nf-r5i"/>
+                <outlet property="ischecked" destination="aFM-IZ-Wd9" id="qGu-Ab-wIz"/>
             </connections>
             <point key="canvasLocation" x="-174" y="-177"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="ic_unchecked" width="44" height="44"/>
+    </resources>
 </document>

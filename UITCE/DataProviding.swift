@@ -217,6 +217,27 @@ class DataProviding {
         
         viewController.present(refreshAlert, animated: true, completion: nil)
     }
+    
+    /*Have before send socket*/
+    static let start : [UInt8] = [0x40, 0x00]
+    static let chksm: [UInt8] = [0x00, 0x00]
+    static let begin: [UInt8] = [0x42, 0x00]
+    static let size : [UInt8] = [0x00, sizeBytes] //8 byte
+    
+    static func sendData(foo : [UInt8]) -> Bool {
+        var isSuccess: Bool = false
+        socketTCP?.send(data: start)
+        socketTCP?.send(data: chksm)
+        socketTCP?.send(data: begin)
+        socketTCP?.send(data: size)
+        // usleep(1) // co
+        if socketTCP?.send(data: foo).0 == true {
+            isSuccess = true
+        }
+        socketTCP?.send(data: chksm)
+        return isSuccess
+    }
+    
 }
 
 extension CGRect{

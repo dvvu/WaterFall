@@ -21,8 +21,10 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var ip: UITextField!
     @IBOutlet weak var port: UITextField!
     @IBOutlet var backgroundView: UIView!
+    @IBOutlet weak var connectTitle: UIButton!
+    @IBOutlet weak var signal: UIButton!
     
-    var pickerData = ["192","164","128", "96", "64", "32"]
+    var pickerData = ["192","128", "96", "64", "32"]
     var textField: UITextField?
     
     var addrConnect: String = "192.168.0.125"
@@ -41,6 +43,14 @@ class SettingViewController: UIViewController {
         vans.isUserInteractionEnabled = true
         let tapOnImage: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewPicker))
         vans.addGestureRecognizer(tapOnImage)
+        
+        if isConnected == true {
+            signal.setImage(UIImage(named: "on"), for: .normal)
+            connectTitle.setTitle("DISCONNECT", for: .normal)
+        } else {
+            signal.setImage(UIImage(named: "off"), for: .normal)
+            connectTitle.setTitle("CONNECT", for: .normal)
+        }
     }
     
     func viewPicker() {
@@ -81,6 +91,21 @@ class SettingViewController: UIViewController {
             }
             valueVanNumber = van!
             valueThreshold = value!
+            valueRowDelay = dRow!
+            switch valueVanNumber {
+            case 192:
+                sizeBytes = 0x18
+            case 128:
+                sizeBytes = 0x10
+            case 96:
+                sizeBytes = 0x0C
+            case 64:
+                sizeBytes = 0x08
+            case 32:
+                sizeBytes = 0x04
+            default:
+                sizeBytes = 0x08
+            }
         }
         
         let refreshAlert = UIAlertController(title: "Infomation", message: "Setting is changed.", preferredStyle: UIAlertControllerStyle.alert)
@@ -92,16 +117,42 @@ class SettingViewController: UIViewController {
     }
    
     @IBAction func connnect(_ sender: Any) {
-        let (resultSet, err) = SD.executeQuery(sqlStr: "SELECT * FROM Setting")
-        if err != nil {
-            print(" Error in loading Data")
+        
+        if isConnected == false {
+            let (resultSet, err) = SD.executeQuery(sqlStr: "SELECT * FROM Setting")
+            if err != nil {
+                print(" Error in loading Data")
+            } else {
+                addrConnect =  (resultSet[0]["IP"]?.asString()!)!
+                portConnect = (resultSet[0]["Port"]?.asInt()!)!
+            }
+            socketTCP = TCPClient(addr: addrConnect, port: portConnect)
+            // Connect the socket
+            let (success, msg ) = socketTCP!.connect(timeout: 1)
+            
+            if success == true {
+                isConnected = true
+                signal.setImage(UIImage(named: "on"), for: .normal)
+                connectTitle.setTitle("DISCONNECT", for: .normal)
+                // self.view.makeToast(message: "Connected", duration: 1.0, position: ToastPosition.center, image: UIImage(named: "on")!)
+                
+                self.view.makeToast("Connected Success!", duration: 1.0, position: ToastPosition.center, title: "", image: UIImage(named: "on")!, style: ToastStyle.init(), completion: nil)
+                
+            } else {
+                isConnected = false
+                connectTitle.setTitle("CONNECT", for: .normal)
+                signal.setImage(UIImage(named: "off"), for: .normal)
+            }
         } else {
-            addrConnect =  (resultSet[0]["IP"]?.asString()!)!
-            portConnect = (resultSet[0]["Port"]?.asInt()!)!
+            socketTCP = TCPClient(addr: "1", port: 0)
+            let (success, msg )=socketTCP!.connect(timeout: 1)
+            if success == false {
+                isConnected = false
+                signal.setImage(UIImage(named: "off"), for: .normal)
+                connectTitle.setTitle("CONNECT", for: .normal)
+                 self.view.makeToast("DisConnected Success!", duration: 1.0, position: ToastPosition.center, title: "", image: UIImage(named: "off")!, style: ToastStyle.init(), completion: nil)
+            }
         }
-        socketTCP = TCPClient(addr: addrConnect, port: portConnect)
-        // Connect the socket
-        let (success, msg ) = socketTCP!.connect(timeout: 1)
     }
     
     @IBAction func `default`(_ sender: Any) {
