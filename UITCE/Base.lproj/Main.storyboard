@@ -408,7 +408,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="3IH-1m-uRQ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="3IH-1m-uRQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rL0-X8-wcP">
@@ -1187,8 +1187,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background.jpg" width="450" height="400"/>
         <image name="bdroplets" width="1669" height="2400"/>
+        <image name="bg" width="564" height="1055"/>
         <image name="gdroplet" width="256" height="256"/>
         <image name="off" width="16" height="16"/>
         <image name="pdroplet" width="256" height="256"/>
