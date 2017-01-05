@@ -55,7 +55,7 @@ class DrawImageViewController: UIViewController
     }
     
     fileprivate func setupToolBar() {
-        let height = (self.paletteView?.frame)!.height * 0.35
+        let height = (self.paletteView?.frame)!.height * 0.30
         let startY = self.view.frame.height - (paletteView?.frame)!.height - height
         let toolBar = ToolBar()
         toolBar.frame = CGRect(x: 0, y: startY, width: self.view.frame.width, height: height)
@@ -64,7 +64,7 @@ class DrawImageViewController: UIViewController
         toolBar.loadButton?.addTarget(self, action: #selector(DrawImageViewController.onClickLoadButton), for: .touchUpInside)
         toolBar.saveButton?.addTarget(self, action: #selector(DrawImageViewController.onClickSaveButton), for: .touchUpInside)
         // default title is "Save"
-        toolBar.saveButton?.setTitle("Save", for: UIControlState())
+        toolBar.saveButton?.setTitle("SAVE", for: UIControlState())
         toolBar.clearButton?.addTarget(self, action: #selector(DrawImageViewController.onClickClearButton), for: .touchUpInside)
         toolBar.loadButton?.isEnabled = true
         toolBar.loadButton?.isHidden = true
@@ -75,7 +75,7 @@ class DrawImageViewController: UIViewController
     fileprivate func setupCanvas() {
         //        let canvasView = Canvas(backgroundImage: UIImage.init(named: "frame")!) // You can init with custom background image
         let canvasView = Canvas()
-        canvasView.frame = CGRect(x: 20, y: 80, width: self.view.frame.size.width - 40, height: self.view.frame.size.width - 40)
+        canvasView.frame = CGRect(x: 20, y: 70, width: self.view.frame.size.width - 40, height: self.view.frame.size.width - 40)
         canvasView.delegate = self
         canvasView.layer.borderColor = UIColor(red: 0.22, green: 0.22, blue: 0.22, alpha: 0.8).cgColor
         canvasView.layer.borderWidth = 2.0
