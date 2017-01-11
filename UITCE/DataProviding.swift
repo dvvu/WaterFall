@@ -200,7 +200,7 @@ class DataProviding {
     }
     
     static func SendSuccess(viewController: UIViewController) {
-        let refreshAlert = UIAlertController(title: "Congatulate", message: "Sent success!", preferredStyle: UIAlertControllerStyle.alert)
+        let refreshAlert = UIAlertController(title: "Congratulate", message: "Sent success!", preferredStyle: UIAlertControllerStyle.alert)
         
         refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
         }))

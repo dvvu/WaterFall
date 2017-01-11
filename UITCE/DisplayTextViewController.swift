@@ -163,7 +163,7 @@ class DisplayTextViewController: UIViewController, UITextFieldDelegate {
                 let delay = valueRowDelay*1000
                 usleep(useconds_t(delay))
             }
-            
+            DataProviding.SendSuccess(viewController: self)
 //            let newString = (result.pixelValues?.description)!
 //            let newString2 = newString.replacingOccurrences(of: ", ", with: "", options: .literal, range: nil)
 //            let newString3 = newString2.replacingOccurrences(of: "[", with: "", options: .literal, range: nil)

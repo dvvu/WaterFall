@@ -74,8 +74,8 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="9hi-Hh-dHU"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pM-ul-yoW">
@@ -167,8 +167,8 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="lsM-NM-RGk"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="delays 2 rows" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wp8-Bc-jAO">
@@ -415,7 +415,7 @@
                                 <rect key="frame" x="187" y="0.0" width="188" height="334"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                                <state key="normal" title="SETTING" image="pdroplet">
+                                <state key="normal" backgroundImage="purple_droplet">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -426,7 +426,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="188" height="334"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                                <state key="normal" title="IMPORT PHOTO" image="rdroplet">
+                                <state key="normal" backgroundImage="red_droplets">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -437,7 +437,7 @@
                                 <rect key="frame" x="0.0" y="333" width="188" height="334"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                                <state key="normal" title="DRAW IMAGE" image="gdroplet">
+                                <state key="normal" backgroundImage="blue_droplets">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -448,7 +448,7 @@
                                 <rect key="frame" x="187" y="333" width="188" height="334"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                                <state key="normal" title="DISPLAY TEXT" image="bdroplets">
+                                <state key="normal" backgroundImage="brow_droplets">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -456,12 +456,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIw-3X-oRP">
-                                <rect key="frame" x="57" y="203" width="262" height="262"/>
+                                <rect key="frame" x="94" y="167" width="188" height="334"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="pIw-3X-oRP" secondAttribute="height" multiplier="1:1" id="BN5-M0-D7R"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="ydroplets">
+                                <state key="normal" backgroundImage="yellow_droplets">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -503,7 +500,6 @@
                         <constraints>
                             <constraint firstItem="TXT-Jv-8fv" firstAttribute="width" secondItem="Isl-nS-SZf" secondAttribute="width" id="01m-9l-zGF"/>
                             <constraint firstItem="pIw-3X-oRP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2Gy-8I-C3X"/>
-                            <constraint firstItem="pIw-3X-oRP" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="2Xb-ug-VjX"/>
                             <constraint firstAttribute="trailing" secondItem="rL0-X8-wcP" secondAttribute="trailing" id="37l-rl-bbu"/>
                             <constraint firstItem="5FX-vb-Ekj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3y9-yE-izc"/>
                             <constraint firstItem="pCr-ml-KS1" firstAttribute="centerX" secondItem="Isl-nS-SZf" secondAttribute="centerX" id="6kO-c5-lsx"/>
@@ -519,6 +515,7 @@
                             <constraint firstItem="52i-YI-RCs" firstAttribute="centerX" secondItem="rL0-X8-wcP" secondAttribute="centerX" id="LLO-A8-G5b"/>
                             <constraint firstItem="pIw-3X-oRP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MIc-g3-Rfn"/>
                             <constraint firstItem="3IH-1m-uRQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="O4P-6D-oay"/>
+                            <constraint firstItem="pIw-3X-oRP" firstAttribute="width" secondItem="Isl-nS-SZf" secondAttribute="width" id="Q3f-jv-yRI"/>
                             <constraint firstAttribute="trailing" secondItem="TXT-Jv-8fv" secondAttribute="trailing" id="Rc3-e0-RLD"/>
                             <constraint firstItem="5AQ-po-krs" firstAttribute="centerY" secondItem="TXT-Jv-8fv" secondAttribute="centerY" multiplier="1.15" id="SAO-IJ-uBM"/>
                             <constraint firstItem="4x2-9o-xCx" firstAttribute="centerY" secondItem="5FX-vb-Ekj" secondAttribute="centerY" multiplier="1.15" id="Tdu-46-Xzb"/>
@@ -530,6 +527,7 @@
                             <constraint firstItem="rL0-X8-wcP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="ZxP-m4-rLG"/>
                             <constraint firstItem="pCr-ml-KS1" firstAttribute="centerY" secondItem="Isl-nS-SZf" secondAttribute="centerY" multiplier="1.15" id="eXF-ar-bGr"/>
                             <constraint firstItem="rL0-X8-wcP" firstAttribute="height" secondItem="5FX-vb-Ekj" secondAttribute="height" id="ezm-qU-DhM"/>
+                            <constraint firstItem="pIw-3X-oRP" firstAttribute="height" secondItem="rL0-X8-wcP" secondAttribute="height" id="oyt-z2-9cX"/>
                             <constraint firstItem="52i-YI-RCs" firstAttribute="centerY" secondItem="rL0-X8-wcP" secondAttribute="centerY" multiplier="1.15" id="rMc-Ds-mB5"/>
                             <constraint firstItem="5FX-vb-Ekj" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="rRk-4k-1h7"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="TXT-Jv-8fv" secondAttribute="bottom" id="u5a-EO-0Ot"/>
@@ -580,7 +578,7 @@
                                         <state key="normal" image="off"/>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.56360438887609576" blue="0.057136714778298403" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.88456597222222222" green="0.50245497937879713" blue="0.056876315750456076" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="n1i-8c-MoW" firstAttribute="centerY" secondItem="pv9-DH-PuM" secondAttribute="centerY" multiplier="1.2" id="7zD-ZO-i8x"/>
                                     <constraint firstItem="htU-fg-oN5" firstAttribute="leading" secondItem="pv9-DH-PuM" secondAttribute="leading" constant="8" id="FXT-27-MrN"/>
@@ -695,7 +693,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.98019625465979576" green="0.9882352941176471" blue="0.85828474704187407" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.92189530785202378" green="0.86793503112609038" blue="0.94493055555555561" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="QuQ-LP-1nf" secondAttribute="trailing" id="0JZ-0T-w0V"/>
                             <constraint firstItem="j71-Bc-zyg" firstAttribute="top" secondItem="pv9-DH-PuM" secondAttribute="bottom" id="4Fp-4V-xJj"/>
@@ -945,7 +943,7 @@
                                         <state key="normal" image="off"/>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.096753375046628745" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Nb0-rf-B3Q" firstAttribute="centerY" secondItem="kE9-Ph-ZDz" secondAttribute="centerY" multiplier="1.2" id="68D-Lj-iKy"/>
                                     <constraint firstItem="t1W-PF-z3t" firstAttribute="centerY" secondItem="kE9-Ph-ZDz" secondAttribute="centerY" multiplier="1.2" id="6S0-n4-yBs"/>
@@ -1012,7 +1010,7 @@
                                         <state key="normal" image="off"/>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0039215686274509803" blue="0.66274509803921566" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="59" id="ET6-QH-avw"/>
                                     <constraint firstItem="HDM-se-K22" firstAttribute="leading" secondItem="AiP-du-DNY" secondAttribute="leading" constant="8" id="FML-WA-M2A"/>
@@ -1029,7 +1027,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uuo-o4-KMw">
                                         <rect key="frame" x="188" y="0.0" width="187" height="51"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0039215686274509803" blue="0.66274509803921566" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="SEND">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1040,7 +1038,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTy-rs-4Yo">
                                         <rect key="frame" x="0.0" y="0.0" width="188" height="52"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0039215686274509803" blue="0.66274509803921566" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="SAVE">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1064,8 +1062,8 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="✍🏻Enter Your Text✍🏻" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADN-4s-gJZ">
-                                <rect key="frame" x="106" y="67" width="163" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="102" y="67" width="171" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1145,7 +1143,7 @@
                                 </constraints>
                             </pickerView>
                         </subviews>
-                        <color key="backgroundColor" red="0.63729453030047689" green="0.85678350358655098" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.50196081400000003" green="0.31515409966138497" blue="0.29559787370329366" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="40t-xy-XQF" secondAttribute="trailing" id="0OA-Nl-Pdy"/>
                             <constraint firstItem="AES-3g-t1C" firstAttribute="trailing" secondItem="pwX-P7-kK9" secondAttribute="trailingMargin" id="5VV-62-RIE"/>
@@ -1187,12 +1185,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bdroplets" width="1669" height="2400"/>
         <image name="bg" width="564" height="1055"/>
-        <image name="gdroplet" width="256" height="256"/>
+        <image name="blue_droplets" width="128" height="128"/>
+        <image name="brow_droplets" width="128" height="128"/>
         <image name="off" width="16" height="16"/>
-        <image name="pdroplet" width="256" height="256"/>
-        <image name="rdroplet" width="256" height="256"/>
-        <image name="ydroplets" width="3251" height="3251"/>
+        <image name="purple_droplet" width="128" height="128"/>
+        <image name="red_droplets" width="128" height="128"/>
+        <image name="yellow_droplets" width="128" height="128"/>
     </resources>
 </document>
