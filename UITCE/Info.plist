@@ -2,6 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>font1.ttf</string>
+		<string>font2.ttf</string>
+		<string>font3.ttf</string>
+		<string>font4.ttf</string>
+		<string>font5.ttf</string>
+		<string>font6.ttf</string>
+		<string>font7.ttf</string>
+		<string>font8.ttf</string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

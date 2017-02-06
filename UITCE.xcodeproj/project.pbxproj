@@ -21,6 +21,14 @@
 		F8321B3E1E07C91A00900A52 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F8321B3D1E07C91A00900A52 /* libsqlite3.tbd */; };
 		F8321B401E07E04700900A52 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F8321B3F1E07E04700900A52 /* libsqlite3.0.tbd */; };
 		F846E52E1E0D25E4001768CB /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F846E52D1E0D25E4001768CB /* background.jpg */; };
+		F84948F31E28E3AA001798E7 /* font1.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F84948EB1E28E0CD001798E7 /* font1.ttf */; };
+		F84948F41E28E3B8001798E7 /* font2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F84948EC1E28E0CD001798E7 /* font2.ttf */; };
+		F84948F51E28E3B8001798E7 /* font3.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F84948ED1E28E0CD001798E7 /* font3.ttf */; };
+		F84948F61E28E3B8001798E7 /* font4.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F84948EE1E28E0CD001798E7 /* font4.ttf */; };
+		F84948F71E28E3B8001798E7 /* font5.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F84948EF1E28E0CD001798E7 /* font5.ttf */; };
+		F84948F81E28E3B8001798E7 /* font6.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F84948F01E28E0CD001798E7 /* font6.ttf */; };
+		F84948F91E28E3B8001798E7 /* font7.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F84948F11E28E0CD001798E7 /* font7.ttf */; };
+		F84948FA1E28E3B8001798E7 /* font8.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F84948F21E28E0CD001798E7 /* font8.ttf */; };
 		F85712771E10CA7100132DBB /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85712761E10CA7100132DBB /* Toast.swift */; };
 		F8A4FD281E0C16AC00AD3972 /* ysocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A4FD221E0C16AC00AD3972 /* ysocket.swift */; };
 		F8A4FD291E0C16AC00AD3972 /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = F8A4FD231E0C16AC00AD3972 /* ytcpsocket.c */; };
@@ -78,6 +86,14 @@
 		F8321B3F1E07E04700900A52 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		F8321B431E07E19A00900A52 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		F846E52D1E0D25E4001768CB /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		F84948EB1E28E0CD001798E7 /* font1.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = font1.ttf; sourceTree = "<group>"; };
+		F84948EC1E28E0CD001798E7 /* font2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = font2.ttf; sourceTree = "<group>"; };
+		F84948ED1E28E0CD001798E7 /* font3.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = font3.ttf; sourceTree = "<group>"; };
+		F84948EE1E28E0CD001798E7 /* font4.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = font4.ttf; sourceTree = "<group>"; };
+		F84948EF1E28E0CD001798E7 /* font5.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = font5.ttf; sourceTree = "<group>"; };
+		F84948F01E28E0CD001798E7 /* font6.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = font6.ttf; sourceTree = "<group>"; };
+		F84948F11E28E0CD001798E7 /* font7.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = font7.ttf; sourceTree = "<group>"; };
+		F84948F21E28E0CD001798E7 /* font8.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = font8.ttf; sourceTree = "<group>"; };
 		F85712761E10CA7100132DBB /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		F8A4FD221E0C16AC00AD3972 /* ysocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ysocket.swift; sourceTree = "<group>"; };
 		F8A4FD231E0C16AC00AD3972 /* ytcpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ytcpsocket.c; sourceTree = "<group>"; };
@@ -157,6 +173,7 @@
 		F8321AE61E077B3C00900A52 /* UITCE */ = {
 			isa = PBXGroup;
 			children = (
+				F84948EA1E28E0B7001798E7 /* CustomFont */,
 				F8A4FD211E0C169D00AD3972 /* Socket */,
 				F8FD67521E0A221100D49F01 /* Func */,
 				F8321B441E07E72800900A52 /* DataBase */,
@@ -225,6 +242,21 @@
 				F8E486EA1E08E28300009C45 /* DataProviding.swift */,
 			);
 			name = DataBase;
+			sourceTree = "<group>";
+		};
+		F84948EA1E28E0B7001798E7 /* CustomFont */ = {
+			isa = PBXGroup;
+			children = (
+				F84948EB1E28E0CD001798E7 /* font1.ttf */,
+				F84948EC1E28E0CD001798E7 /* font2.ttf */,
+				F84948ED1E28E0CD001798E7 /* font3.ttf */,
+				F84948EE1E28E0CD001798E7 /* font4.ttf */,
+				F84948EF1E28E0CD001798E7 /* font5.ttf */,
+				F84948F01E28E0CD001798E7 /* font6.ttf */,
+				F84948F11E28E0CD001798E7 /* font7.ttf */,
+				F84948F21E28E0CD001798E7 /* font8.ttf */,
+			);
+			name = CustomFont;
 			sourceTree = "<group>";
 		};
 		F8A4FD211E0C169D00AD3972 /* Socket */ = {
@@ -366,6 +398,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F84948F41E28E3B8001798E7 /* font2.ttf in Resources */,
+				F84948F51E28E3B8001798E7 /* font3.ttf in Resources */,
+				F84948F61E28E3B8001798E7 /* font4.ttf in Resources */,
+				F84948F71E28E3B8001798E7 /* font5.ttf in Resources */,
+				F84948F81E28E3B8001798E7 /* font6.ttf in Resources */,
+				F84948F91E28E3B8001798E7 /* font7.ttf in Resources */,
+				F84948FA1E28E3B8001798E7 /* font8.ttf in Resources */,
+				F84948F31E28E3AA001798E7 /* font1.ttf in Resources */,
 				F8321AF21E077B3C00900A52 /* LaunchScreen.storyboard in Resources */,
 				F8321AEF1E077B3C00900A52 /* Assets.xcassets in Resources */,
 				F8321B1B1E07826800900A52 /* ImageCollectionViewCell.xib in Resources */,

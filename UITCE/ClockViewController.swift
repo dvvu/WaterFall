@@ -99,6 +99,7 @@ class ClockViewController: UIViewController {
                     usleep(useconds_t(delay))
                     
                 }
+                DataProviding.SendSuccess(viewController: self)
             } else {
                 DataProviding.SendFail(viewController: self)
             }

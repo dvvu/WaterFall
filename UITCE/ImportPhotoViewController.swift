@@ -167,7 +167,7 @@ class ImportPhotoViewController: UIViewController {
 //                    signal.setImage(UIImage(named: "off"), for: .normal)
 //                    isConnected = false
 //                }
-                
+                DataProviding.SendSuccess(viewController: self)
             } else {
                 DataProviding.SendFail(viewController: self)
             }

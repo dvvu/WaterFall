@@ -19,14 +19,14 @@ class DisplayTextViewController: UIViewController, UITextFieldDelegate {
    
     var imagesDirectoryPath:String!
     var pickerDataSize:[Int] = []
-    var pickerDataFont:[String] = ["Arial",
-                                   "Arial-BoldMT",
-                                   "Arial-ItalicMT",
-                                   "Arial-BoldItalicMT",
-                                   "Georgia",
-                                   "Georgia-Bold",
-                                   "Georgia-Italic",
-                                   "Georgia-BoldItalic",
+    var pickerDataFont:[String] = ["AlfaSlabOne-Regular",
+                                   "Alex Brush",
+                                   "AlphaEcho",
+                                   "AnuDaw",
+                                   "3Dumb",
+                                   "Bigfish",
+                                   "BlackRose",
+                                   "Bloody",
                                    ]
     /*
      "Arial",
@@ -163,7 +163,7 @@ class DisplayTextViewController: UIViewController, UITextFieldDelegate {
                 let delay = valueRowDelay*1000
                 usleep(useconds_t(delay))
             }
-            
+            DataProviding.SendSuccess(viewController: self)
 //            let newString = (result.pixelValues?.description)!
 //            let newString2 = newString.replacingOccurrences(of: ", ", with: "", options: .literal, range: nil)
 //            let newString3 = newString2.replacingOccurrences(of: "[", with: "", options: .literal, range: nil)
