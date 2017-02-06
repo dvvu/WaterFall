@@ -19,14 +19,14 @@ class DisplayTextViewController: UIViewController, UITextFieldDelegate {
    
     var imagesDirectoryPath:String!
     var pickerDataSize:[Int] = []
-    var pickerDataFont:[String] = ["Arial",
-                                   "Arial-BoldMT",
-                                   "Arial-ItalicMT",
-                                   "Arial-BoldItalicMT",
-                                   "Georgia",
-                                   "Georgia-Bold",
-                                   "Georgia-Italic",
-                                   "Georgia-BoldItalic",
+    var pickerDataFont:[String] = ["AlfaSlabOne-Regular",
+                                   "Alex Brush",
+                                   "AlphaEcho",
+                                   "AnuDaw",
+                                   "3Dumb",
+                                   "Bigfish",
+                                   "BlackRose",
+                                   "Bloody",
                                    ]
     /*
      "Arial",
